@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Oswald&display=swap");
 img {
   height: 20px;
 }
@@ -13,6 +14,7 @@ img {
   display: inline-block;
   position: relative;
   text-align: center;
+  font-family: "Oswald", sans-serif;
 }
 
 .drop input[type="checkbox"] {
@@ -52,6 +54,7 @@ img {
   border-radius: 4px;
   -webkit-transition: all 0.3s ease;
   transition: all 0.3s ease;
+  text-transform: uppercase;
 }
 
 @media (hover: hover) {
