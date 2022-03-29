@@ -4,57 +4,65 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Baetes AR-Viewer</title>
+    <title>Mintwebb AR-Viewer</title>
     <!-- Import the component -->
     <script
       type="module"
       src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"
     ></script>
     <script src="https://code.iconify.design/2/2.1.0/iconify.min.js"></script>
+    <link rel="stylesheet" href="test.css" />
     <style>
+      /* body {
+        background-color: #fff;
+      }
       #container {
         visibility: hidden;
         height: 0px;
         width: 0px;
       }
       #AR_trigger {
-        font-family: proxima-nova, sans-serif;
-        font-weight: 600;
-        text-transform: none;
-        text-decoration: none;
-        padding: 0.75rem 2rem;
-        /* Baetes CSS */
-        color: black;
-        border: none;
-        background-color: rgb(219, 219, 219);
+        color: #000;
+        background-color: white;
+        padding: 10px;
+        text-transform: uppercase;
+        cursor: pointer;
+        display: block;
+        font-size: 16px;
+        display: grid;
+        grid-template-columns: auto auto;
+        place-items: center;
+        transition: 1s;
       }
       #AR_trigger:hover {
+        color: #000;
+        background-color: rgb(193, 255, 193);
+        padding: 10px;
+        text-transform: uppercase;
         cursor: pointer;
+        display: block;
+        font-size: 16px;
+        display: grid;
+        grid-template-columns: auto auto;
+        place-items: center;
+      }
+
+      p {
+        margin: 0;
+        width: auto;
+        font-size: 12px;
       }
 
       img {
-        width: 15px;
-      }
+        height: 30px;
+      } */
     </style>
     <meta
       http-equiv="Content-Security-Policy"
       content="upgrade-insecure-requests"
     />
 
-    <!-- Google analytics  -->
-    <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script
-      async
-      src="https://www.googletagmanager.com/gtag/js?id=G-QQC1VVBK40"
-    ></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag() {
-        dataLayer.push(arguments);
-      }
-      gtag("js", new Date());
 
-      gtag("config", "G-QQC1VVBK40");
     </script>
   </head>
   <body>
@@ -71,11 +79,37 @@
         camera-controls
       ></model-viewer>
     </div>
-    <button id="AR_trigger">
-      <img src="bild.png" alt="camera-logo" />
-      <%= button_text || "Testa i din hemmamiljö" %>
-    </button>
+
+    <label class="drop">
+      <input type="checkbox" id="target-drop-example" />
+      <!-- Toggle Drop -->
+      <span class="control">
+        <img src="logo-1.png" alt="camera-logo" />
+        <%= button_text || "ViewInAr"%></span
+      >
+      <!-- Fake button -->
+      <!-- Items -->
+      <ul class="drop-items">
+        <%sizes_used.forEach(function(size){ %>
+        <li class="item-drop" onClick="myFunction(`<%= size %>`, `<%= android_src %>`, `<%= ios_src %>`)">
+            <%= size %>
+        </li>
+        <%
+      })%>
+      </ul>
+      <!-- Alternative to close dropdown with click out -->
+      <label for="target-drop-example" class="overlay-close"></label>
+    </label>
+    <!-- END -- Dropdown -->
+
     <script>
+     function myFunction(size, src, ios){
+        let iphone_src = ios + size
+        let android_src = src + size
+        document.getElementById("the-viewer").setAttribute("src", android_src);
+        document.getElementById("the-viewer").setAttribute("ios-src", iphone_src);
+        
+      }
       let AR_trigger = document.getElementById("AR_trigger");
       let viewer = document.getElementById("the-viewer");
 
