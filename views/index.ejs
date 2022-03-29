@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Baetes AR-Viewer</title>
+    <!-- Import the component -->
+    <script
+      type="module"
+      src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"
+    ></script>
+    <script src="https://code.iconify.design/2/2.1.0/iconify.min.js"></script>
+    <style>
+      #container {
+        visibility: hidden;
+        height: 0px;
+        width: 0px;
+      }
+      #AR_trigger {
+        font-family: proxima-nova, sans-serif;
+        font-weight: 600;
+        text-transform: none;
+        text-decoration: none;
+        padding: 0.75rem 2rem;
+        /* Baetes CSS */
+        color: black;
+        border: none;
+        background-color: rgb(219, 219, 219);
+      }
+      #AR_trigger:hover {
+        cursor: pointer;
+      }
+
+      img {
+        width: 15px;
+      }
+    </style>
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="upgrade-insecure-requests"
+    />
+
+    <!-- Google analytics  -->
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-QQC1VVBK40"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+
+      gtag("config", "G-QQC1VVBK40");
+    </script>
+  </head>
+  <body>
+    <!-- src and ios-src is set in index.js -->
+    <div id="container">
+      <model-viewer
+        id="the-viewer"
+        alt="3D model of product"
+        src="<%= android_src %>"
+        ios-src="<%= ios_src %>"
+        ar
+        ar-placement="wall"
+        ar-modes="webxr scene-viewer quick-look"
+        camera-controls
+      ></model-viewer>
+    </div>
+    <button id="AR_trigger">
+      <img src="bild.png" alt="camera-logo" />
+      <%= button_text || "Testa i din hemmamiljö" %>
+    </button>
+    <script>
+      let AR_trigger = document.getElementById("AR_trigger");
+      let viewer = document.getElementById("the-viewer");
+
+      // Run activateAR() when a user clicks on the AR_trigger button
+      AR_trigger.addEventListener("click", () => {
+        viewer.activateAR();
+      });
+    </script>
+  </body>
+</html>
