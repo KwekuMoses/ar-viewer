@@ -10,7 +10,7 @@ It is possible to send button-text query strings.
 
 Like so: /TheURL?text=View This in AR
 
-Where the text on the button is set to "View This in AR".
+Where the text on the button is set to "View This in AR". <br>
 If no text query is sent a hardcoded string of "Testa i din hemmamiljö" is displayed.
 
 ## Current status 💭
@@ -22,5 +22,3 @@ Added text query string variable so it is now possible to change the text of the
 Kweku Moses
 
 ## View Live Project 💫
-
-https://ar-viewer.herokuapp.com/
