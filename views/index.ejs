@@ -68,6 +68,7 @@
   <body>
     <!-- src and ios-src is set in index.js -->
     <div id="container">
+    
       <model-viewer
         id="the-viewer"
         alt="3D model of product"
@@ -79,13 +80,35 @@
         camera-controls
       ></model-viewer>
     </div>
+    
+    <span id="color-wrapper">
+      <span class="color-picker">
+        <span class="one-color">
+          <p class="color-name">RÖD</p>
+          <input class="radio" type="radio" name="color"></input>
+        </span>
+        <span class="one-color">
+          <p class="color-name">BLÅ</p>
+          <input class="radio" type="radio" name="color"></input>
+        </span>
+        <span class="one-color">
+          <p class="color-name">SVART</p>
+          <input class="radio" type="radio" name="color"></input>
+        </span>
+        <span class="one-color">
+          <p class="color-name">VIT</p>
+          <input class="radio" type="radio" name="color"></input>
+        </span>
+    </span>
+    </span>
+
 
     <label class="drop">
       <input type="checkbox" id="target-drop-example" />
       <!-- Toggle Drop -->
       <span class="control">
         <img src="logo-1.png" alt="camera-logo" />
-        <%= button_text || "View In Ar"%></span
+    <span class="btn-text"> <%= button_text || "View In Ar"%></span>   </span
       >
       <!-- Fake button -->
       <!-- Items -->
