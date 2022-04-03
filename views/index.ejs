@@ -27,7 +27,6 @@
         id="the-viewer"
         alt="3D model of product"
         src="<%= android_src %>"
-        ios-src="<%= ios_src %>"
         ar
         ar-placement="wall"
         ar-modes="webxr scene-viewer quick-look"
@@ -83,7 +82,7 @@
       let android_src = src 
       let iphone_src = ios 
         document.getElementById("the-viewer").setAttribute("src", android_src);
-        document.getElementById("the-viewer").setAttribute("ios-src", iphone_src);
+        // document.getElementById("the-viewer").setAttribute("ios-src", iphone_src);
         
       }
      
