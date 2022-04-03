@@ -12,63 +12,17 @@
     ></script>
     <script src="https://code.iconify.design/2/2.1.0/iconify.min.js"></script>
     <link rel="stylesheet" href="test.css" />
-    <style>
-      /* body {
-        background-color: #fff;
-      }
-      #container {
-        visibility: hidden;
-        height: 0px;
-        width: 0px;
-      }
-      #AR_trigger {
-        color: #000;
-        background-color: white;
-        padding: 10px;
-        text-transform: uppercase;
-        cursor: pointer;
-        display: block;
-        font-size: 16px;
-        display: grid;
-        grid-template-columns: auto auto;
-        place-items: center;
-        transition: 1s;
-      }
-      #AR_trigger:hover {
-        color: #000;
-        background-color: rgb(193, 255, 193);
-        padding: 10px;
-        text-transform: uppercase;
-        cursor: pointer;
-        display: block;
-        font-size: 16px;
-        display: grid;
-        grid-template-columns: auto auto;
-        place-items: center;
-      }
-
-      p {
-        margin: 0;
-        width: auto;
-        font-size: 12px;
-      }
-
-      img {
-        height: 30px;
-      } */
-    </style>
+ 
     <meta
       http-equiv="Content-Security-Policy"
       content="upgrade-insecure-requests"
     />
-
 
     </script>
   </head>
   <body>
     <!-- src and ios-src is set in index.js -->
     <div id="container">
-    
       <model-viewer
         id="the-viewer"
         alt="3D model of product"
@@ -95,13 +49,13 @@
           <p class="color-name">SVART</p>
           <input class="radio" type="radio" name="color"></input>
         </span>
+        <img src="/bild.png">
         <span class="one-color">
           <p class="color-name">VIT</p>
           <input class="radio" type="radio" name="color"></input>
         </span>
     </span>
     </span>
-
 
     <label class="drop">
       <input type="checkbox" id="target-drop-example" />
@@ -125,32 +79,20 @@
     </label>
     <!-- END -- Dropdown -->
     <script>
-    //  function myFunction(size, src, ios){
-    //     let iphone_src = ios + size
-    //     let android_src = src + size
-    //     document.getElementById("the-viewer").setAttribute("src", android_src);
-    //     document.getElementById("the-viewer").setAttribute("ios-src", iphone_src);
-        
-    //   }
      
      function setAttributes(size, src, ios){
-        let iphone_src = ios 
-        let android_src = src 
+      let android_src = src 
+      let iphone_src = ios 
         document.getElementById("the-viewer").setAttribute("src", android_src);
         document.getElementById("the-viewer").setAttribute("ios-src", iphone_src);
         
       }
      
 
-      // let AR_trigger = document.getElementById("AR_trigger");
       let viewer = document.getElementById("the-viewer");
 
-      // // Run activateAR() when a user clicks on the AR_trigger button
-      // AR_trigger.addEventListener("click", () => {
-   
-      // });
-
       var elements = document.getElementsByClassName("item-drop");
+      
         var activateAR = function() {
             viewer.activateAR(); 
         };
