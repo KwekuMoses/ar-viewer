@@ -114,7 +114,7 @@
       <!-- Items -->
       <ul class="drop-items">
         <%sizes_used.forEach(function(size){ %>
-        <li class="item-drop" onClick="myFunction(`<%= size %>`, `<%= android_src %>`, `<%= ios_src %>`)">
+        <li class="item-drop" onClick="setAttributes(`<%= size %>`, `<%= android_src %>`, `<%= ios_src %>`)">
             <%= size %>cm
         </li>
         <%
@@ -125,29 +125,38 @@
     </label>
     <!-- END -- Dropdown -->
     <script>
-     function myFunction(size, src, ios){
-        let iphone_src = ios + size
-        let android_src = src + size
+    //  function myFunction(size, src, ios){
+    //     let iphone_src = ios + size
+    //     let android_src = src + size
+    //     document.getElementById("the-viewer").setAttribute("src", android_src);
+    //     document.getElementById("the-viewer").setAttribute("ios-src", iphone_src);
+        
+    //   }
+     
+     function setAttributes(size, src, ios){
+        let iphone_src = ios 
+        let android_src = src 
         document.getElementById("the-viewer").setAttribute("src", android_src);
         document.getElementById("the-viewer").setAttribute("ios-src", iphone_src);
         
       }
      
 
-      let AR_trigger = document.getElementById("AR_trigger");
+      // let AR_trigger = document.getElementById("AR_trigger");
       let viewer = document.getElementById("the-viewer");
 
-      // Run activateAR() when a user clicks on the AR_trigger button
-      AR_trigger.addEventListener("click", () => {
+      // // Run activateAR() when a user clicks on the AR_trigger button
+      // AR_trigger.addEventListener("click", () => {
    
-      });
+      // });
 
       var elements = document.getElementsByClassName("item-drop");
-        var myFunction = function() {
+        var activateAR = function() {
             viewer.activateAR(); 
         };
         Array.from(elements).forEach(function(element) {
-        element.addEventListener('click', myFunction);
+        element.addEventListener('click', activateAR);
+        console.log(document.getElementById("the-viewer"))
         });
 
     </script>
