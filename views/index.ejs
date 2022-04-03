@@ -124,7 +124,6 @@
       <label for="target-drop-example" class="overlay-close"></label>
     </label>
     <!-- END -- Dropdown -->
-
     <script>
      function myFunction(size, src, ios){
         let iphone_src = ios + size
@@ -133,13 +132,24 @@
         document.getElementById("the-viewer").setAttribute("ios-src", iphone_src);
         
       }
+     
+
       let AR_trigger = document.getElementById("AR_trigger");
       let viewer = document.getElementById("the-viewer");
 
       // Run activateAR() when a user clicks on the AR_trigger button
       AR_trigger.addEventListener("click", () => {
-        viewer.activateAR();
+   
       });
+
+      var elements = document.getElementsByClassName("item-drop");
+        var myFunction = function() {
+            viewer.activateAR(); 
+        };
+        Array.from(elements).forEach(function(element) {
+        element.addEventListener('click', myFunction);
+        });
+
     </script>
   </body>
 </html>
