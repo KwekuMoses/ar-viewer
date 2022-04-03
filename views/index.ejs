@@ -31,6 +31,7 @@
         ar-placement="wall"
         ar-modes="webxr scene-viewer quick-look"
         camera-controls
+        skybox-image="/1.hdr" 
       ></model-viewer>
     </div>
     
@@ -78,15 +79,11 @@
     <!-- END -- Dropdown -->
     <script>
      
-     function setAttributes(size, src, ios){
-      let android_src = src 
-      let iphone_src = ios 
-        document.getElementById("the-viewer").setAttribute("src", android_src);
-        // document.getElementById("the-viewer").setAttribute("ios-src", iphone_src);
-        
+     function setAttributes(size, Src, ios){
+        let src = Src 
+        document.getElementById("the-viewer").setAttribute("src", src);
       }
      
-
       let viewer = document.getElementById("the-viewer");
 
       var elements = document.getElementsByClassName("item-drop");
