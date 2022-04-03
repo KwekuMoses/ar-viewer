@@ -82,7 +82,8 @@
      function setAttributes(size, Src, ios){
         let color = "vit";
         let src = Src; 
-        document.getElementById("the-viewer").setAttribute("src", src + color);
+        console.log(src + color + ".glb")
+        document.getElementById("the-viewer").setAttribute("src", src + color + ".glb");
       }
      
       let viewer = document.getElementById("the-viewer");

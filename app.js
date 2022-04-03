@@ -18,7 +18,7 @@ app.get("/", (req, res) => {
   // let android_src = `https://s3.eu-west-2.amazonaws.com/product.baetes.com/Limitato_Slipin_DarkGreen_${req.params.url}.glb`;
   // let android_src = `https://s3.eu-west-2.amazonaws.com/product.baetes.com/${req.params.url}.glb`;
   // let ios_src = `https://s3.eu-west-2.amazonaws.com/product.baetes.com/${req.params.url}.reality`;
-  let src = `/picasso.glb`;
+  let src = `/picasso`;
   // let ios_src = `/picasso.usdz`;
   let button_text = req.query.text || "View In Ar";
 
@@ -47,7 +47,7 @@ app.get("/:url", (req, res) => {
   // console.log(req.params.url);
   //  Get the req.route.path  and send that data forward to the viewer.
   // let android_src = `https://s3.eu-west-2.amazonaws.com/product.baetes.com/Limitato_Slipin_DarkGreen_${req.params.url}.glb`;
-  let src = `/picasso.glb`;
+  let src = `/picasso`;
   let button_text = req.query.text;
   console.log(req.query);
   let sizeArray = [
