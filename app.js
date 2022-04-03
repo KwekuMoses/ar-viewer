@@ -18,8 +18,8 @@ app.get("/", (req, res) => {
   // let android_src = `https://s3.eu-west-2.amazonaws.com/product.baetes.com/Limitato_Slipin_DarkGreen_${req.params.url}.glb`;
   // let android_src = `https://s3.eu-west-2.amazonaws.com/product.baetes.com/${req.params.url}.glb`;
   // let ios_src = `https://s3.eu-west-2.amazonaws.com/product.baetes.com/${req.params.url}.reality`;
-  let android_src = `/picasso.glb`;
-  let ios_src = `/picasso.usdz`;
+  let src = `/picasso.glb`;
+  // let ios_src = `/picasso.usdz`;
   let button_text = req.query.text || "View In Ar";
 
   let size_1 = req.query.sizes_1;
@@ -32,8 +32,7 @@ app.get("/", (req, res) => {
 
   res.render("index", {
     root: __dirname,
-    android_src: android_src,
-    ios_src: ios_src,
+    src: src,
     button_text: button_text,
     size_1: size_1,
     size_2: size_2,
@@ -48,8 +47,7 @@ app.get("/:url", (req, res) => {
   // console.log(req.params.url);
   //  Get the req.route.path  and send that data forward to the viewer.
   // let android_src = `https://s3.eu-west-2.amazonaws.com/product.baetes.com/Limitato_Slipin_DarkGreen_${req.params.url}.glb`;
-  let android_src = `/picasso.glb`;
-  let ios_src = `/picasso.usdz`;
+  let src = `/picasso.glb`;
   let button_text = req.query.text;
   console.log(req.query);
   let sizeArray = [
@@ -73,8 +71,7 @@ app.get("/:url", (req, res) => {
 
   res.render("index", {
     root: __dirname,
-    android_src: android_src,
-    ios_src: ios_src,
+    src: src,
     button_text: button_text,
     sizes_used: sizes_used,
   });

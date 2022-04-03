@@ -4,10 +4,15 @@ img {
   height: 20px;
 }
 
-#container {
+model-viewer {
   visibility: hidden;
-  height: 0px;
-  width: 0px;
+  width: 0vw;
+  height: 0vh;
+}
+
+#container {
+  height: 0vh;
+  width: 0vw;
 }
 
 .drop {

@@ -26,12 +26,12 @@
       <model-viewer
         id="the-viewer"
         alt="3D model of product"
-        src="<%= android_src %>"
+        src="<%= src %>"
         ar
         ar-placement="wall"
         ar-modes="webxr scene-viewer quick-look"
         camera-controls
-        skybox-image="/1.hdr" 
+        skybox-image="/josh.jpg" 
       ></model-viewer>
     </div>
     
@@ -67,7 +67,7 @@
       <!-- Items -->
       <ul class="drop-items">
         <%sizes_used.forEach(function(size){ %>
-        <li class="item-drop" onClick="setAttributes(`<%= size %>`, `<%= android_src %>`, `<%= ios_src %>`)">
+        <li class="item-drop" onClick="setAttributes(`<%= size %>`, `<%= src %>`)">
             <%= size %>cm
         </li>
         <%
@@ -80,8 +80,9 @@
     <script>
      
      function setAttributes(size, Src, ios){
-        let src = Src 
-        document.getElementById("the-viewer").setAttribute("src", src);
+        let color = "vit";
+        let src = Src; 
+        document.getElementById("the-viewer").setAttribute("src", src + color);
       }
      
       let viewer = document.getElementById("the-viewer");

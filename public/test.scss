@@ -7,10 +7,15 @@ $width-sm-min: (768px);
 img {
   height: 20px;
 }
-#container {
+model-viewer {
   visibility: hidden;
-  height: 0px;
-  width: 0px;
+  width: 0vw;
+  height: 0vh;
+}
+#container {
+  // visibility: hidden;
+  height: 0vh;
+  width: 0vw;
 }
 //----------------------------
 //-------  Dropdown ----------
