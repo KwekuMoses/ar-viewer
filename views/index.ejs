@@ -12,12 +12,10 @@
     ></script>
     <script src="https://code.iconify.design/2/2.1.0/iconify.min.js"></script>
     <link rel="stylesheet" href="test.css" />
- 
     <meta
       http-equiv="Content-Security-Policy"
       content="upgrade-insecure-requests"
     />
-
     </script>
   </head>
   <body>
@@ -37,22 +35,15 @@
     
     <span id="color-wrapper">
       <span class="color-picker">
+        <%colors_used.forEach(function(color){ %>
         <span class="one-color">
-          <p class="color-name">RÖD</p>
-          <input class="radio" type="radio" name="color"></input>
+          <p class="color-name" onClick="">
+              <%= color %>
+          </p>
+          <input class="radio" type="radio" name="color" value="<%= color %>"></input>
         </span>
-        <span class="one-color">
-          <p class="color-name">BLÅ</p>
-          <input class="radio" type="radio" name="color"></input>
-        </span>
-        <span class="one-color">
-          <p class="color-name">SVART</p>
-          <input class="radio" type="radio" name="color"></input>
-        </span>
-        <span class="one-color">
-          <p class="color-name">VIT</p>
-          <input class="radio" type="radio" name="color"></input>
-        </span>
+          <%
+        })%>
     </span>
     </span>
 
@@ -67,7 +58,7 @@
       <!-- Items -->
       <ul class="drop-items">
         <%sizes_used.forEach(function(size){ %>
-        <li class="item-drop" onClick="setAttributes(`<%= size %>`, `<%= src %>`)">
+        <li class="item-drop" onClick="setAttributes(`<%= size %>`, `<%= src %>`, `<%= name %>`)">
             <%= size %>cm
         </li>
         <%
@@ -79,11 +70,22 @@
     <!-- END -- Dropdown -->
     <script>
      
-     function setAttributes(size, Src, ios){
-        let color = "vit";
-        let src = Src; 
-        console.log(src + color + ".glb")
-        document.getElementById("the-viewer").setAttribute("src", src + color + ".glb");
+     function setAttributes(size, Src, name){
+      //*NOTE queryselector alla färger
+      //*NOTE if element == checked return element  
+      //*NOTE color = element.attribute.color .. . . . . .
+      let color;
+      let src = Src; 
+
+      let radio_buttons = document.getElementsByClassName("radio")
+      Array.from(radio_buttons).map((radio) => {
+        if (radio.checked) {
+         return color = radio.value;
+        }
+      })
+      console.log( src + "/" + color + "/" + size + "/" + name + ".glb")
+
+        document.getElementById("the-viewer").setAttribute("src", src + "/" + color + "/" + size + "/" + name + ".glb");
       }
      
       let viewer = document.getElementById("the-viewer");

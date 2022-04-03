@@ -47,23 +47,35 @@ app.get("/:url", (req, res) => {
   // console.log(req.params.url);
   //  Get the req.route.path  and send that data forward to the viewer.
   // let android_src = `https://s3.eu-west-2.amazonaws.com/product.baetes.com/Limitato_Slipin_DarkGreen_${req.params.url}.glb`;
-  let src = `/picasso`;
+  let src = req.query.customer;
+  let name = req.query.name;
   let button_text = req.query.text;
-  console.log(req.query);
-  let sizeArray = [
-    req.query.size_1,
-    req.query.size_2,
-    req.query.size_3,
-    req.query.size_4,
-    req.query.size_5,
-    req.query.size_6,
-    req.query.size_7,
+  let colorArray = [
+    req.query.color1,
+    req.query.color2,
+    req.query.color3,
+    req.query.color4,
   ];
-  let sizes_used = [];
+  let sizeArray = [
+    req.query.size1,
+    req.query.size2,
+    req.query.size3,
+    req.query.size4,
+    req.query.size5,
+    req.query.size6,
+    req.query.size7,
+  ];
 
+  let sizes_used = [];
+  let colors_used = [];
   sizeArray.map((size) => {
     if (size !== undefined) {
       sizes_used.push(size);
+    }
+  });
+  colorArray.map((color) => {
+    if (color !== undefined) {
+      colors_used.push(color);
     }
   });
 
@@ -74,6 +86,8 @@ app.get("/:url", (req, res) => {
     src: src,
     button_text: button_text,
     sizes_used: sizes_used,
+    colors_used: colors_used,
+    name: name,
   });
 });
 
