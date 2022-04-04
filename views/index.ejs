@@ -47,10 +47,15 @@
     </span>
     </span>
 
-    <label class="drop">
+    <label class="drop" >
       <input type="checkbox" id="target-drop-example" />
       <!-- Toggle Drop -->
-      <span class="control">
+      <span id="thebutton" 
+      background-color="<%= button_backgroundColor %>" 
+      button-border="<%= button_border %>" 
+      text-color="<%= text_color %>" 
+      class="control"
+      >
         <img src="logo-1.png" alt="camera-logo" />
     <span class="btn-text"> <%= button_text || "View In Ar"%></span>   </span
       >
@@ -69,7 +74,21 @@
     </label>
     <!-- END -- Dropdown -->
     <script>
-     
+    function styles() {
+      // style the button
+      let thebutton = document.getElementById("thebutton")
+        let color = thebutton.getAttribute("background-color")
+        thebutton.style.backgroundColor = color
+        // style the border
+        let border = thebutton.getAttribute("button-border")
+        thebutton.style.border = border
+        // style the border
+        let text_color = thebutton.getAttribute("text-color")
+        thebutton.style.color = text_color
+    }
+    styles();
+
+  
      function setAttributes(size, Src, name){
       //*NOTE queryselector alla färger
       //*NOTE if element == checked return element  

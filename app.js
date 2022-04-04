@@ -50,6 +50,10 @@ app.get("/:url", (req, res) => {
   let src = req.query.customer;
   let name = req.query.name;
   let button_text = req.query.text;
+  let button_border = req.query.button_border;
+  let button_backgroundColor = req.query.button_background;
+  let text_color = req.query.text_color;
+
   let colorArray = [
     req.query.color1,
     req.query.color2,
@@ -88,6 +92,9 @@ app.get("/:url", (req, res) => {
     sizes_used: sizes_used,
     colors_used: colors_used,
     name: name,
+    button_border: button_border,
+    button_backgroundColor: button_backgroundColor,
+    text_color: text_color,
   });
 });
 
