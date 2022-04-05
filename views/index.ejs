@@ -29,11 +29,10 @@
         ar-placement="wall"
         ar-modes="webxr scene-viewer quick-look"
         camera-controls
-        skybox-image="/josh.jpg" 
       ></model-viewer>
     </div>
     
-    <span id="color-wrapper">
+    <!-- <span id="color-wrapper">
       <span class="color-picker">
         <%colors_used.forEach(function(color){ %>
         <span class="one-color">
@@ -45,7 +44,7 @@
           <%
         })%>
     </span>
-    </span>
+    </span> -->
 
     <label class="drop" >
       <input type="checkbox" id="target-drop-example" />
@@ -62,9 +61,9 @@
       <!-- Fake button -->
       <!-- Items -->
       <ul class="drop-items">
-        <%sizes_used.forEach(function(size){ %>
-        <li class="item-drop" onClick="setAttributes(`<%= size %>`, `<%= src %>`, `<%= name %>`)">
-            <%= size %>cm
+        <%colors_used.forEach(function(color){ %>
+        <li class="item-drop" onClick="setAttributes(`<%= color %>`, `<%= src %>`, `<%= name %>`)">
+            <%= color %>
         </li>
         <%
       })%>
@@ -104,7 +103,7 @@
       })
       console.log( src + "/" + color + "/" + size + "/" + name + ".glb")
 
-        document.getElementById("the-viewer").setAttribute("src", src + "/" + color + "/" + size + "/" + name + ".glb");
+        document.getElementById("the-viewer").setAttribute("src", src + "/" + color + "/" + name + ".glb");
       }
      
       let viewer = document.getElementById("the-viewer");
