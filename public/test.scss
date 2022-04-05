@@ -128,7 +128,7 @@ model-viewer {
 }
 .color-picker {
   display: grid;
-  place-items: center;
+  place-items: start;
   grid-template-rows: max-content;
   grid-template-columns: repeat(4, 1fr);
   max-width: 115px;
@@ -137,18 +137,19 @@ model-viewer {
 
   .color-name {
     margin: 0;
-    font-size: 8px;
+    font-size: 12px;
   }
 
   .one-color {
     display: grid;
-    place-items: center;
+    place-items: start;
   }
 
   .radio {
     position: relative;
     display: block;
     z-index: 999;
+    margin-left: 0 !important;
   }
 }
 
