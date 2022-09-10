@@ -3,6 +3,11 @@
 //Variables
 $color-primary-theme: #ffffff;
 $width-sm-min: (768px);
+html{
+    display:grid;
+    justify-items:center;
+}
+
 
 img {
   height: auto;
