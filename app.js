@@ -53,6 +53,7 @@ app.get("/:url", (req, res) => {
   let button_border = req.query.button_border;
   let button_backgroundColor = req.query.button_background;
   let text_color = req.query.text_color;
+  let width = req.query.width
 
   let colorArray = [
     req.query.color1,
@@ -83,7 +84,7 @@ app.get("/:url", (req, res) => {
     }
   });
 
-  console.log(sizes_used);
+  console.log(width);
 
   res.render("index", {
     root: __dirname,
@@ -95,6 +96,7 @@ app.get("/:url", (req, res) => {
     button_border: button_border,
     button_backgroundColor: button_backgroundColor,
     text_color: text_color,
+    width: width,
   });
 });
 

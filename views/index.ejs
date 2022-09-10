@@ -19,19 +19,19 @@
     </script>
   </head>
   <body>
-    <!-- src and ios-src is set in index.js -->
+    <!-- src and ios-src is set in app.js -->
     <div id="container">
       <model-viewer
         id="the-viewer"
         alt="3D model of product"
         src="<%= src %>"
         ar
+        ar-scale="fixed"
         ar-placement="wall"
         ar-modes="webxr scene-viewer quick-look"
         camera-controls
       ></model-viewer>
     </div>
-    
     <span id="color-wrapper">
       <span class="color-picker">
         <%colors_used.forEach(function(color){ %>
@@ -54,9 +54,10 @@
       button-border="<%= button_border %>" 
       text-color="<%= text_color %>" 
       class="control"
+      width="<%= width %>"
       >
         <img src="logo-1.png" alt="camera-logo" />
-    <span class="btn-text"> <%= button_text || "View In Ar"%></span>   </span
+        <span class="btn-text"> <%= button_text || "View In Ar"%></span>   </span
       >
       <!-- Fake button -->
       <!-- Items -->
@@ -81,9 +82,12 @@
         // style the border
         let border = thebutton.getAttribute("button-border")
         thebutton.style.border = border
-        // style the border
+        // style the text-color
         let text_color = thebutton.getAttribute("text-color")
         thebutton.style.color = text_color
+        // style the width
+        let button_width = thebutton.getAttribute("width")
+        thebutton.style.width = button_width
     }
     styles();
 
@@ -101,7 +105,7 @@
          return color = radio.value;
         }
       })
-      console.log( src + "/" + color + "/" + size + "/" + name + ".glb")
+        console.log( src + "/" + color + "/" + size + "/" + name + ".glb")
 
         document.getElementById("the-viewer").setAttribute("src", src + "/" + color + "/" + size + "/" + name + ".glb");
       }
@@ -113,10 +117,16 @@
         var activateAR = function() {
             viewer.activateAR(); 
         };
-        Array.from(elements).forEach(function(element) {
-        element.addEventListener('click', activateAR);
-        console.log(document.getElementById("the-viewer"))
-        });
+
+        document.getElementById("thebutton").addEventListener('click', activateAR);
+
+
+
+        //Utan lista nu
+        // Array.from(elements).forEach(function(element) {
+        // element.addEventListener('click', activateAR);
+        // console.log(document.getElementById("the-viewer"))
+        // });
 
     </script>
   </body>
