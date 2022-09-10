@@ -1,7 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;700&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Oswald&display=swap");
 img {
-  height: 20px;
+  height: auto;
 }
 
 model-viewer {
@@ -157,8 +157,24 @@ model-viewer {
   margin-left: 0 !important;
 }
 
+#icon-text-wrapper {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: auto 1fr;
+      grid-template-columns: auto 1fr;
+}
+
+#thebutton {
+  display: -ms-grid;
+  display: grid;
+  place-items: center;
+}
+
 .btn-text {
   margin-bottom: 2px;
+  display: -ms-grid;
+  display: grid;
+  place-content: center;
 }
 
 .item-drop {

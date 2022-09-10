@@ -5,7 +5,7 @@ $color-primary-theme: #ffffff;
 $width-sm-min: (768px);
 
 img {
-  height: 20px;
+  height: auto;
 }
 model-viewer {
   visibility: hidden;
@@ -152,9 +152,19 @@ model-viewer {
     margin-left: 0 !important;
   }
 }
+#icon-text-wrapper {
+    display:grid;
+    grid-template-columns: auto 1fr;
+}
+#thebutton {
+    display: grid;
+    place-items: center;
+}
 
 .btn-text {
   margin-bottom: 2px;
+  display:grid;
+  place-content: center;
 }
 
 .item-drop {

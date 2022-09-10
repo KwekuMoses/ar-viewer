@@ -55,11 +55,15 @@
       text-color="<%= text_color %>" 
       class="control"
       width="<%= width %>"
+      height="<%= height %>"
+    
       >
-        <!-- <img src="logo-1.png" alt="camera-logo" /> -->
-        <span class="btn-text"> <%= button_text || "View In Ar"%></span>   
+      <div id="icon-text-wrapper">
+        <img id="theIcon" src="augmented-reality.png" alt="camera-logo" iconWidth="<%= iconWidth %>"/>
+        <span id="btntext" class="btn-text" fontSize="<%= fontSize %>"> <%= button_text || "View In Ar"%></span>   
         </span
       >
+    </div>
       <!-- Fake button -->
       <!-- Items -->
       <ul class="drop-items">
@@ -78,6 +82,8 @@
     function styles() {
       // style the button
       let thebutton = document.getElementById("thebutton")
+      let btntext = document.getElementById("btntext")
+      let icon = document.getElementById("theIcon")
         let color = thebutton.getAttribute("background-color")
         thebutton.style.backgroundColor = color
         // style the border
@@ -89,6 +95,17 @@
         // style the width
         let button_width = thebutton.getAttribute("width")
         thebutton.style.width = button_width
+        // style the height
+        let button_height = thebutton.getAttribute("height")
+        thebutton.style.height = button_height
+        // style the fontsize
+        let fontSize = btntext.getAttribute("fontSize")
+        btntext.style.fontSize = fontSize
+        console.log(fontSize)
+        // style the fontsize
+        let iconWidth = theIcon.getAttribute("iconWidth")
+        icon.style.width = iconWidth
+        console.log(fontSize)
     }
     styles();
 
