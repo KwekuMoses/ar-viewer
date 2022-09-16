@@ -78,8 +78,13 @@
       <label for="target-drop-example" class="overlay-close"></label>
     </label>
     <!-- END -- Dropdown -->
+    <p class="bl"></p>
     <script>
     function styles() {
+
+
+ 
+
       // style the button
       let thebutton = document.getElementById("thebutton")
       let btntext = document.getElementById("btntext")
@@ -108,7 +113,6 @@
         console.log(fontSize)
     }
     styles();
-
   
      function setAttributes(size, Src, name){
       //*NOTE queryselector alla färger
@@ -123,9 +127,26 @@
          return color = radio.value;
         }
       })
-        console.log( src + "/" + color + "/" + size + "/" + name + ".glb")
+        console.log( src + "/" + color  + "/" + name + ".glb")
+        let userAgent = navigator.userAgent;
+let browserName;
+console.log(userAgent)
+if (userAgent.match(/android/i)) {
+  browserName = "Android";
+} else if (userAgent.match(/iphone/i)) {
+  browserName = "iPhone";
+} else {
+  browserName = "Unknown";
+}
 
-        document.getElementById("the-viewer").setAttribute("src", src + "/" + color + "/" + size + "/" + name + ".glb");
+console.log("src", src + "/" + color + "/" + name + ".usdz")
+
+if (browserName === "iPhone") {
+  document.getElementById("the-viewer").setAttribute("src", src + "/" + color + "/" + name + ".usdz");
+}
+if (browserName === "Android") {
+  document.getElementById("the-viewer").setAttribute("src", src + "/" + color + "/" + name + ".glb");
+}
       }
      
       let viewer = document.getElementById("the-viewer");
@@ -145,7 +166,7 @@
         // element.addEventListener('click', activateAR);
         // console.log(document.getElementById("the-viewer"))
         // });
-
     </script>
+    <script src="https://cdn.jsdelivr.net/npm/mobile-detect@1.4.5/mobile-detect.min.js"></script>
   </body>
 </html>
