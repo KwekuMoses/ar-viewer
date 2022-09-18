@@ -116,30 +116,18 @@
         const setViewerAttributes = () => {
 
           // checka iphone vs android
-          let userAgent = navigator.userAgent;
-          let browserName;
-          console.log(userAgent)
-          if (userAgent.match(/android/i)) {
-            browserName = "Android";
-          } else if (userAgent.match(/iphone/i)) {
-            browserName = "iPhone";
-          } else {
-            browserName = "Unknown";
-          }
-          if (browserName === "iPhone") {
-            document.getElementById("the-viewer").setAttribute("src", src + "/" + color + "/" + name + ".usdz");
-          }
-          if (browserName === "Android") {
-            document.getElementById("the-viewer").setAttribute("src", src + "/" + color + "/" + name + ".glb");
-          }
-        }
+          document.getElementById("the-viewer").setAttribute("src", Src + "/" + color + "/" + name + ".glb");
+         document.getElementById("the-viewer").setAttribute("ios-src", Src + "/" + color + "/" + name + ".usdz");
      
+        }
+
+
         const activateAR = () => {
           viewer.activateAR(); 
         };
-        
-        
         document.getElementById("thebutton").addEventListener('click', activateAR);
+
+
         Array.from(elements).forEach(function(element) {
         element.addEventListener('click', activateAR);
         });
