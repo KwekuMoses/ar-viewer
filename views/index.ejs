@@ -52,9 +52,9 @@
       >
     </div>
       <!-- Items -->
-      <ul class="drop-items">
+      <ul id="dropdown" class="drop-items">
         <%colors_used.forEach(function(color){ %>
-        <li class="item-drop" onClick="setListItemAttributes(`<%= src %>`, `<%= name %>`)">
+        <li class="item-drop" onClick="setListItemAttributes(`<%= src %>`, `<%= name %>`, `<%= color %>`)">
             <%= color %>
         </li>
         <%
@@ -64,12 +64,10 @@
       <label for="target-drop-example" class="overlay-close"></label>
     </label>
     <!-- END -- Dropdown -->
-
-
-
     <script>      
     let viewer = document.getElementById("the-viewer");
     let elements = document.getElementsByClassName("item-drop");
+    let dropdown = document.getElementById("dropdown");
 
     function styles() {
       // style the button
@@ -97,43 +95,35 @@
       let iconWidth = theIcon.getAttribute("iconWidth")
       icon.style.width = iconWidth
     }
-        styles();
-        const setListItemAttributes = (size, Src, name) => {
-      //* queryselector alla färger
-      //* if element == checked return element  
-      //* color = element.attribute.color .. . . . . .
-      let color;
-      let src = Src; 
+    styles();
+    const setListItemAttributes = (Src, name, Color) => {
+      // let color;
+      // let src = Src; 
 
-      let radio_buttons = document.getElementsByClassName("radio")
-      Array.from(radio_buttons).map((radio) => {
-        if (radio.checked) {
-         return color = radio.value;
-        }
-      })
-      setViewerAttributes();
+      // let radio_buttons = document.getElementsByClassName("radio")
+      // Array.from(radio_buttons).map((radio) => {
+      //   if (radio.checked) {
+      //    return color = radio.value;
+      //   }
+      // })
+      setViewerAttributes(Src, name, Color);
       }
-        const setViewerAttributes = () => {
-
+    const setViewerAttributes = (Src, name, Color) => {
           // checka iphone vs android
           document.getElementById("the-viewer").setAttribute("src", Src + "/" + color + "/" + name + ".glb");
-         document.getElementById("the-viewer").setAttribute("ios-src", Src + "/" + color + "/" + name + ".usdz");
-     
+          document.getElementById("the-viewer").setAttribute("ios-src", Src + "/" + color + "/" + name + ".usdz");
         }
-
-
-        const activateAR = () => {
+    const revealDropDown = () => {
+      dropdown.classList.contains('active') ? dropdown.classList.remove("active") : dropdown.classList.add("active");
+    }
+    const activateAR = () => {
           viewer.activateAR(); 
         };
-        document.getElementById("thebutton").addEventListener('click', activateAR);
-
-
-        Array.from(elements).forEach(function(element) {
+    document.getElementById("thebutton").addEventListener('click', revealDropDown);
+    Array.from(elements).forEach(function(element) {
         element.addEventListener('click', activateAR);
         });
-
-
-
+    
     </script>
     <script src="https://cdn.jsdelivr.net/npm/mobile-detect@1.4.5/mobile-detect.min.js"></script>
   </body>

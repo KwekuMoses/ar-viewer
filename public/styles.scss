@@ -8,6 +8,7 @@ html{
     justify-items:center;
 }
 
+
 img {
   height: auto;
 }
@@ -177,4 +178,10 @@ model-viewer {
 
 iframe {
   height: 300px;
+}
+
+
+.active {
+max-height: unset !important;
+opacity: 1 !important;
 }
