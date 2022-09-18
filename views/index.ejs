@@ -11,7 +11,7 @@
       src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"
     ></script>
     <script src="https://code.iconify.design/2/2.1.0/iconify.min.js"></script>
-    <link rel="stylesheet" href="test.css" />
+    <link rel="stylesheet" href="styles.css" />
     <meta
       http-equiv="Content-Security-Policy"
       content="upgrade-insecure-requests"
@@ -67,7 +67,7 @@
       <!-- Items -->
       <ul class="drop-items">
         <%colors_used.forEach(function(color){ %>
-        <li class="item-drop" onClick="setListItemAttributes( `<%= src %>`, `<%= name %>`)">
+        <li class="item-drop" onClick="setListItemAttributes(`<%= src %>`, `<%= name %>`)">
             <%= color %>
         </li>
         <%
