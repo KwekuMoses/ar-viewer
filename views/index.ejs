@@ -24,7 +24,7 @@
       <model-viewer
         id="the-viewer"
         alt="3D model of product"
-        src="<%= src %>"
+        src="<%= tsrc %>"
         ar
         ar-scale="fixed"
         ar-placement="wall"
@@ -54,7 +54,7 @@
       <!-- Items -->
       <ul id="dropdown" class="drop-items">
         <%colors_used.forEach(function(color){ %>
-        <li class="item-drop" onClick="setListItemAttributes(`<%= Src %>`, `<%= product %>`, `<%= color %>`)">
+        <li class="item-drop" onClick="setListItemAttributes(`<%= tsrc %>`, `<%= product %>`, `<%= color %>`)">
             <%= color %>
         </li>
         <%
