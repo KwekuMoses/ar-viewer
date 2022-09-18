@@ -1,0 +1,209 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Oswald&display=swap");
+html {
+  display: -ms-grid;
+  display: grid;
+  justify-items: center;
+}
+
+img {
+  height: auto;
+}
+
+model-viewer {
+  visibility: hidden;
+  width: 0vw;
+  height: 0vh;
+}
+
+#container {
+  height: 0vh;
+  width: 0vw;
+}
+
+.drop {
+  display: inline-block;
+  position: relative;
+  text-align: center;
+  font-family: 'Oswald', sans-serif;
+}
+
+.drop input[type='checkbox'] {
+  display: none;
+}
+
+.drop input[type='checkbox']:checked ~ .drop-items {
+  opacity: 1;
+  max-height: 400px;
+}
+
+.drop input[type='checkbox']:checked ~ .control {
+  z-index: 99;
+  -webkit-box-shadow: 0 0 0 2px white;
+          box-shadow: 0 0 0 2px white;
+}
+
+.drop input[type='checkbox']:checked ~ .control:after {
+  -webkit-transform: rotate(180deg);
+          transform: rotate(180deg);
+}
+
+.drop input[type='checkbox']:checked ~ .overlay-close {
+  -webkit-transform: none;
+          transform: none;
+  pointer-events: initial;
+}
+
+.drop .control {
+  position: relative;
+  color: #000;
+  display: inline-block;
+  cursor: pointer;
+  padding: 0.2em 0.3em;
+  background: #ffffff;
+  border: 1px solid black;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+}
+
+@media (hover: hover) {
+  .drop .control:hover {
+    opacity: 0.75;
+  }
+}
+
+.drop .control:after {
+  content: '';
+  display: inline-block;
+  height: 0.5em;
+  width: 0.5em;
+  background-image: url("data:image/svg+xml,%3Csvg fill='%23000' xmlns='http://www.w3.org/2000/svg' width='16' height='13.838' viewBox='0 0 16 13.838'%3E%3Cpath d='M15.78,12.753a1.529,1.529,0,0,1-1.311,2.314H1.53A1.529,1.529,0,0,1,.219,12.753L6.69,1.969a1.528,1.528,0,0,1,2.619,0L15.78,12.753Z' transform='translate(16 15.067) rotate(180)'/%3E%3C/svg%3E%0A");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  -webkit-transition: -webkit-transform 0.3s ease;
+  transition: -webkit-transform 0.3s ease;
+  transition: transform 0.3s ease;
+  transition: transform 0.3s ease, -webkit-transform 0.3s ease;
+  margin-bottom: 3px;
+}
+
+.drop .drop-items {
+  position: absolute;
+  top: calc(100% + 0.4rem);
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+  background: #fff;
+  -webkit-box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+          box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+  border-radius: 4px;
+  overflow: hidden;
+  max-height: 0;
+  opacity: 0;
+  z-index: 99;
+}
+
+.drop .drop-items .item-drop {
+  list-style: none;
+  height: 40px;
+  display: -ms-grid;
+  display: grid;
+  place-items: center;
+  border-bottom: 1px solid rgba(128, 128, 128, 0.281);
+}
+
+.drop .drop-items .item-drop a {
+  display: block;
+  color: #555;
+  text-decoration: none;
+  padding: 0.8rem;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+
+@media (hover: hover) {
+  .drop .drop-items .item-drop a:hover {
+    background: #eee;
+  }
+}
+
+.drop .drop-items .item-drop:hover {
+  cursor: pointer;
+}
+
+.drop .overlay-close {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  z-index: 9;
+  -webkit-transform: translate(100%, 0);
+          transform: translate(100%, 0);
+  pointer-events: none;
+}
+
+.color-picker {
+  display: -ms-grid;
+  display: grid;
+  place-items: start;
+  -ms-grid-rows: max-content;
+      grid-template-rows: -webkit-max-content;
+      grid-template-rows: max-content;
+  -ms-grid-columns: (1fr)[4];
+      grid-template-columns: repeat(4, 1fr);
+  max-width: 115px;
+  margin-bottom: 7px;
+  font-family: 'Oswald', sans-serif;
+}
+
+.color-picker .color-name {
+  margin: 0;
+  font-size: 12px;
+}
+
+.color-picker .one-color {
+  display: -ms-grid;
+  display: grid;
+  place-items: start;
+}
+
+.color-picker .radio {
+  position: relative;
+  display: block;
+  z-index: 999;
+  margin-left: 0 !important;
+}
+
+#icon-text-wrapper {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: auto 1fr;
+      grid-template-columns: auto 1fr;
+}
+
+#thebutton {
+  display: -ms-grid;
+  display: grid;
+  place-items: center;
+}
+
+.btn-text {
+  margin-bottom: 2px;
+  display: -ms-grid;
+  display: grid;
+  place-content: center;
+}
+
+.item-drop {
+  z-index: 9999999;
+}
+
+iframe {
+  height: 300px;
+}
+/*# sourceMappingURL=styles.css.map */
