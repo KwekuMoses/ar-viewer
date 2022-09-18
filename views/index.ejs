@@ -32,19 +32,7 @@
         camera-controls
       ></model-viewer>
     </div>
-    <span id="color-wrapper">
-      <span class="color-picker">
-        <%colors_used.forEach(function(color){ %>
-        <span class="one-color">
-          <p class="color-name" onClick="">
-              <%= color %>
-          </p>
-          <input class="radio" type="radio" name="color" value="<%= color %>"></input>
-        </span>
-          <%
-        })%>
-    </span>
-    </span>
+   
 
     <label class="drop" >
       <input type="checkbox" id="target-drop-example" />
