@@ -1,5 +1,5 @@
 {
-  "name": "nodejs-express-baetes-ar",
+  "name": "nodejs-express-ar",
   "version": "1.0.0",
   "scripts": {
     "start": "node app.js"

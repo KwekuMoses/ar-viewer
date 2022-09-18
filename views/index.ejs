@@ -64,12 +64,11 @@
         </span
       >
     </div>
-      <!-- Fake button -->
       <!-- Items -->
       <ul class="drop-items">
-        <%sizes_used.forEach(function(size){ %>
-        <li class="item-drop" onClick="setAttributes(`<%= size %>`, `<%= src %>`, `<%= name %>`)">
-            <%= size %>cm
+        <%colors_used.forEach(function(color){ %>
+        <li class="item-drop" onClick="setListItemAttributes(`<%= size %>`, `<%= src %>`, `<%= name %>`)">
+            <%= color %>
         </li>
         <%
       })%>
@@ -78,46 +77,44 @@
       <label for="target-drop-example" class="overlay-close"></label>
     </label>
     <!-- END -- Dropdown -->
-    <p class="bl"></p>
-    <script>
+
+
+
+    <script>      
+    let viewer = document.getElementById("the-viewer");
+    let elements = document.getElementsByClassName("item-drop");
+
     function styles() {
-
-
- 
-
       // style the button
       let thebutton = document.getElementById("thebutton")
       let btntext = document.getElementById("btntext")
       let icon = document.getElementById("theIcon")
-        let color = thebutton.getAttribute("background-color")
-        thebutton.style.backgroundColor = color
-        // style the border
-        let border = thebutton.getAttribute("button-border")
-        thebutton.style.border = border
-        // style the text-color
-        let text_color = thebutton.getAttribute("text-color")
-        thebutton.style.color = text_color
-        // style the width
-        let button_width = thebutton.getAttribute("width")
-        thebutton.style.width = button_width
-        // style the height
-        let button_height = thebutton.getAttribute("height")
-        thebutton.style.height = button_height
-        // style the fontsize
-        let fontSize = btntext.getAttribute("fontSize")
-        btntext.style.fontSize = fontSize
-        console.log(fontSize)
-        // style the fontsize
-        let iconWidth = theIcon.getAttribute("iconWidth")
-        icon.style.width = iconWidth
-        console.log(fontSize)
+      let color = thebutton.getAttribute("background-color")
+      thebutton.style.backgroundColor = color
+      // style the border
+      let border = thebutton.getAttribute("button-border")
+      thebutton.style.border = border
+      // style the text-color
+      let text_color = thebutton.getAttribute("text-color")
+      thebutton.style.color = text_color
+      // style the width
+      let button_width = thebutton.getAttribute("width")
+      thebutton.style.width = button_width
+      // style the height
+      let button_height = thebutton.getAttribute("height")
+      thebutton.style.height = button_height
+      // style the fontsize
+      let fontSize = btntext.getAttribute("fontSize")
+      btntext.style.fontSize = fontSize
+      // style the fontsize
+      let iconWidth = theIcon.getAttribute("iconWidth")
+      icon.style.width = iconWidth
     }
-    styles();
-  
-     function setAttributes(size, Src, name){
-      //*NOTE queryselector alla färger
-      //*NOTE if element == checked return element  
-      //*NOTE color = element.attribute.color .. . . . . .
+        styles();
+        const setListItemAttributes = (size, Src, name) => {
+      //* queryselector alla färger
+      //* if element == checked return element  
+      //* color = element.attribute.color .. . . . . .
       let color;
       let src = Src; 
 
@@ -127,45 +124,41 @@
          return color = radio.value;
         }
       })
-        console.log( src + "/" + color  + "/" + name + ".glb")
-        let userAgent = navigator.userAgent;
-let browserName;
-console.log(userAgent)
-if (userAgent.match(/android/i)) {
-  browserName = "Android";
-} else if (userAgent.match(/iphone/i)) {
-  browserName = "iPhone";
-} else {
-  browserName = "Unknown";
-}
-
-console.log("src", src + "/" + color + "/" + name + ".usdz")
-
-if (browserName === "iPhone") {
-  document.getElementById("the-viewer").setAttribute("src", src + "/" + color + "/" + name + ".usdz");
-}
-if (browserName === "Android") {
-  document.getElementById("the-viewer").setAttribute("src", src + "/" + color + "/" + name + ".glb");
-}
+      setViewerAttributes();
       }
+        const setViewerAttributes = () => {
+
+          // checka iphone vs android
+          let userAgent = navigator.userAgent;
+          let browserName;
+          console.log(userAgent)
+          if (userAgent.match(/android/i)) {
+            browserName = "Android";
+          } else if (userAgent.match(/iphone/i)) {
+            browserName = "iPhone";
+          } else {
+            browserName = "Unknown";
+          }
+          if (browserName === "iPhone") {
+            document.getElementById("the-viewer").setAttribute("src", src + "/" + color + "/" + name + ".usdz");
+          }
+          if (browserName === "Android") {
+            document.getElementById("the-viewer").setAttribute("src", src + "/" + color + "/" + name + ".glb");
+          }
+        }
      
-      let viewer = document.getElementById("the-viewer");
-
-      var elements = document.getElementsByClassName("item-drop");
-      
-        var activateAR = function() {
-            viewer.activateAR(); 
+        const activateAR = () => {
+          viewer.activateAR(); 
         };
-
+        
+        
         document.getElementById("thebutton").addEventListener('click', activateAR);
+        Array.from(elements).forEach(function(element) {
+        element.addEventListener('click', activateAR);
+        });
 
 
 
-        //Utan lista nu
-        // Array.from(elements).forEach(function(element) {
-        // element.addEventListener('click', activateAR);
-        // console.log(document.getElementById("the-viewer"))
-        // });
     </script>
     <script src="https://cdn.jsdelivr.net/npm/mobile-detect@1.4.5/mobile-detect.min.js"></script>
   </body>
