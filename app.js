@@ -47,7 +47,7 @@ app.get('/:url', (req, res) => {
   // console.log(req.params.url);
   //  Get the req.route.path  and send that data forward to the viewer.
   // let android_src = `https://s3.eu-west-2.amazonaws.com/product.baetes.com/Limitato_Slipin_DarkGreen_${req.params.url}.glb`;
-  let src = req.query.src
+  let Src = req.query.Src
   let product = req.query.product
   let button_text = req.query.button_text
   let button_border = req.query.button_border
@@ -91,7 +91,7 @@ app.get('/:url', (req, res) => {
 
   res.render('index', {
     root: __dirname,
-    src: src,
+    Src: Src,
     button_text: button_text,
     sizes_used: sizes_used,
     colors_used: colors_used,
