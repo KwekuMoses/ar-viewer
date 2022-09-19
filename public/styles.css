@@ -190,6 +190,10 @@ model-viewer {
   display: -ms-grid;
   display: grid;
   place-items: center;
+  grid-auto-flow: column;
+  -ms-grid-columns: min-content;
+      grid-template-columns: -webkit-min-content;
+      grid-template-columns: min-content;
 }
 
 .btn-text {

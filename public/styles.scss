@@ -164,6 +164,8 @@ model-viewer {
 #thebutton {
     display: grid;
     place-items: center;
+    grid-auto-flow: column;
+    grid-template-columns: min-content;
 }
 
 .btn-text {
