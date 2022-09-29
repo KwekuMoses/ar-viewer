@@ -14,37 +14,6 @@ app.set('view engine', 'ejs')
 
 app.get('/', (req, res) => {
   // console.log(req.params.url);
-  // Get the req.route.path  and send that data forward to the viewer
-  // let android_src = `https://s3.eu-west-2.amazonaws.com/product.baetes.com/Limitato_Slipin_DarkGreen_${req.params.url}.glb`;
-  // let android_src = `https://s3.eu-west-2.amazonaws.com/product.baetes.com/${req.params.url}.glb`;
-  // let ios_src = `https://s3.eu-west-2.amazonaws.com/product.baetes.com/${req.params.url}.reality`;
-  let src = `/picasso`
-  // let ios_src = `/picasso.usdz`;
-  let button_text = req.query.text || 'View In Ar'
-
-  let size_1 = req.query.sizes_1
-  let size_2 = req.query.sizes_2
-  let size_3 = req.query.sizes_3
-  let size_4 = req.query.sizes_4
-  let size_5 = req.query.sizes_5
-  let size_6 = req.query.sizes_6
-  let size_7 = req.query.sizes_7
-
-  res.render('index', {
-    root: __dirname,
-    src: src,
-    button_text: button_text,
-    size_1: size_1,
-    size_2: size_2,
-    size_3: size_3,
-    size_4: size_4,
-    size_5: size_5,
-    size_6: size_6,
-    size_7: size_7
-  })
-})
-app.get('/:url', (req, res) => {
-  // console.log(req.params.url);
   //  Get the req.route.path  and send that data forward to the viewer.
   // let android_src = `https://s3.eu-west-2.amazonaws.com/product.baetes.com/Limitato_Slipin_DarkGreen_${req.params.url}.glb`;
   let tsrc = req.query.tsrc
@@ -86,8 +55,6 @@ app.get('/:url', (req, res) => {
       colors_used.push(color)
     }
   })
-
-  console.log(tsrc)
 
   res.render('index', {
     root: __dirname,
