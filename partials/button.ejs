@@ -1,0 +1,29 @@
+<input type="checkbox" id="target-drop-example" />
+<!-- Toggle Drop -->
+<span id="thebutton" 
+background-color="<%= button_backgroundColor %>" 
+button-border="<%= button_border %>" 
+text-color="<%= text_color %>" 
+class="control"
+width="<%= width %>"
+height="<%= height %>"
+
+>
+<img id="theIcon" src="augmented-reality.png" alt="camera-logo" iconWidth="<%= iconWidth %>"/>
+
+<div id="icon-text-wrapper">
+  <span id="btntext" class="btn-text" fontSize="<%= fontSize %>"> <%= button_text || "View In Ar"%></span>   
+  </span
+>
+</div>
+<!-- Items -->
+<ul id="dropdown" class="drop-items">
+  <%colors_used.forEach(function(color){ %>
+  <li class="item-drop" onClick="setListItemAttributes(`<%= tsrc %>`, `<%= product %>`, `<%= color %>`)">
+      <%= color %>
+  </li>
+  <%
+})%>
+</ul>
+<!-- Alternative to close dropdown with click out -->
+<label for="target-drop-example" class="overlay-close"></label>
