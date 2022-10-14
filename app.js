@@ -78,7 +78,7 @@ app.get('/', (req, res) => {
 app.post('/', (req, res) => {
   console.log(req)
   let User = new user({
-    username: req.query.product
+    username: 'test'
   })
   User.save((err, data) => {
     if (err) {
