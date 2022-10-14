@@ -5,11 +5,15 @@ var mongoose = require('mongoose')
 mongoose.connect('mongodb+srv://kweku:mongodb@cluster.8uxr5.mongodb.net/test')
 const path = require('path')
 var user = require('./models/user.js')
+var bodyParser = require('body-parser')
 
 var cors = require('cors')
-
+// create application/json parser
+var jsonParser = bodyParser.json()
+// create application/x-www-form-urlencoded parser
+app.use(express.json())
+app.use(express.urlencoded({ extended: false }))
 app.use(express.static('public'))
-
 app.use(cors())
 app.set('views', path.join(__dirname, 'views'))
 app.set('view engine', 'ejs')
@@ -75,23 +79,25 @@ app.get('/', (req, res) => {
   })
 })
 
-app.post('/', (req, res) => {
-  console.log(req)
+app.post('/', jsonParser, (req, res) => {
+  console.log(req.body)
   let User = new user({
-    username: 'test'
+    customer: req.body.tsrc,
+    product: req.body.product
   })
   User.save((err, data) => {
     if (err) {
-      res.status(400).json({
-        errorMessage: err,
-        status: false
-      })
+      // res.status(400).json({
+      //   errorMessage: err,
+      //   status: false
+      // })
     } else {
-      res.status(200).json({
-        status: true,
-        title: 'Registered Successfully.'
-      })
+      // res.status(200).json({
+      //   status: true,
+      //   title: 'Registered Successfully.'
+      // })
     }
+    res.end()
   })
 })
 
