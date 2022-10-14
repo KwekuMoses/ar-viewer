@@ -19,9 +19,11 @@ height="<%= height %>"
 <!-- Items -->
 <ul id="dropdown" class="drop-items">
   <%colors_used.forEach(function(color){ %>
-  <li class="item-drop" onClick="setListItemAttributes(`<%= tsrc %>`, `<%= product %>`, `<%= color %>`)">
+    <form action="/" method="post">
+  <li class="item-drop" value="Submit"  onClick="setListItemAttributes(`<%= tsrc %>`, `<%= product %>`, `<%= color %>`)">
       <%= color %>
   </li>
+    </form>
   <%
 })%>
 </ul>

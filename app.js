@@ -1,8 +1,10 @@
 const express = require('express')
 const app = express()
 const PORT = process.env.PORT || 3000
-
+var mongoose = require('mongoose')
+mongoose.connect('mongodb+srv://kweku:mongodb@cluster.8uxr5.mongodb.net/test')
 const path = require('path')
+var user = require('./models/user.js')
 
 var cors = require('cors')
 
@@ -70,6 +72,26 @@ app.get('/', (req, res) => {
     height: height,
     fontSize: fontSize,
     iconWidth: iconWidth
+  })
+})
+
+app.post('/', (req, res) => {
+  console.log(req)
+  let User = new user({
+    username: req.query.product
+  })
+  User.save((err, data) => {
+    if (err) {
+      res.status(400).json({
+        errorMessage: err,
+        status: false
+      })
+    } else {
+      res.status(200).json({
+        status: true,
+        title: 'Registered Successfully.'
+      })
+    }
   })
 })
 
