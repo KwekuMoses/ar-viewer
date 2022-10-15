@@ -1,9 +1,9 @@
 <input type="checkbox" id="target-drop-example" />
 <!-- Toggle Drop -->
 <span id="thebutton"
-background-color="<%= button_backgroundColor %>"
-button-border="<%= button_border %>"
-text-color="<%= text_color %>"
+background-color="<%= buttonBackgroundColor %>"
+button-border="<%= buttonBorder %>"
+text-color="<%= textColor %>"
 class="control"
 width="<%= width %>"
 height="<%= height %>"
@@ -12,13 +12,13 @@ height="<%= height %>"
 <img id="theIcon" src="images/augmented-reality.png" alt="camera-logo" iconWidth="<%= iconWidth %>"/>
 
 <div id="icon-text-wrapper">
-  <span id="btntext" class="btn-text" fontSize="<%= fontSize %>"> <%= button_text || "View In Ar"%></span>
+  <span id="btntext" class="btn-text" fontSize="<%= fontSize %>"> <%= buttonText || "View In Ar"%></span>
   </span
 >
 </div>
 <!-- Items -->
 <ul id="dropdown" class="drop-items">
-  <%colors_used.forEach(function(color){ %>
+  <%colors.forEach(function(color){ %>
     <form action="/" method="POST">
        <input type="text" name="product" value="<%= product %>"/>
        <input type="text" name="catalog" value="<%= catalog %>"/>

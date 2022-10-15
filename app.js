@@ -27,10 +27,10 @@ app.get('/', (req, res) => {
   // let android_src = `https://s3.eu-west-2.amazonaws.com/product.baetes.com/Limitato_Slipin_DarkGreen_${req.params.url}.glb`;
   let catalog = req.query.catalog
   let product = req.query.product
-  let button_text = req.query.button_text
-  let button_border = req.query.button_border
-  let button_backgroundColor = req.query.button_backgroundColor
-  let text_color = req.query.text_color
+  let buttonText = req.query.buttonText
+  let buttonBorder = req.query.buttonBorder
+  let buttonBackgroundColor = req.query.buttonBackgroundColor
+  let textColor = req.query.textColor
   let width = req.query.width
   let height = req.query.height
   let fontSize = req.query.fontSize
@@ -52,29 +52,29 @@ app.get('/', (req, res) => {
     req.query.size7
   ]
 
-  let sizes_used = []
-  let colors_used = []
+  let sizes = []
+  let colors = []
   sizeArray.map((size) => {
     if (size !== undefined) {
-      sizes_used.push(size)
+      sizes.push(size)
     }
   })
   colorArray.map((color) => {
     if (color !== undefined) {
-      colors_used.push(color)
+      colors.push(color)
     }
   })
 
   res.render('index', {
     root: __dirname,
     catalog: catalog,
-    button_text: button_text,
-    sizes_used: sizes_used,
-    colors_used: colors_used,
+    buttonText: buttonText,
+    sizes: sizes,
+    colors: colors,
     product: product,
-    button_border: button_border,
-    button_backgroundColor: button_backgroundColor,
-    text_color: text_color,
+    buttonBorder: buttonBorder,
+    buttonBackgroundColor: buttonBackgroundColor,
+    textColor: textColor,
     width: width,
     height: height,
     fontSize: fontSize,

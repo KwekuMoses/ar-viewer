@@ -8,8 +8,8 @@ thebutton.style.backgroundColor = color
 let border = thebutton.getAttribute('button-border')
 thebutton.style.border = border
 // style the text-color
-let text_color = thebutton.getAttribute('text-color')
-thebutton.style.color = text_color
+let textColor = thebutton.getAttribute('text-color')
+thebutton.style.color = textColor
 // style the width
 let button_width = thebutton.getAttribute('width')
 thebutton.style.width = button_width
