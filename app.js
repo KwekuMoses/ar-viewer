@@ -1,10 +1,13 @@
 const express = require('express')
 const app = express()
 const PORT = process.env.PORT || 3000
+const dayjs = require('dayjs')
 var mongoose = require('mongoose')
-mongoose.connect('mongodb+srv://kweku:mongodb@cluster.8uxr5.mongodb.net/test')
+mongoose.connect(
+  'mongodb+srv://kweku:mongodb@cluster.8uxr5.mongodb.net/mintwebb-visitors'
+)
 const path = require('path')
-var user = require('./models/user.js')
+var visit = require('./models/visit.js')
 var bodyParser = require('body-parser')
 
 var cors = require('cors')
@@ -22,7 +25,7 @@ app.get('/', (req, res) => {
   // console.log(req.params.url);
   //  Get the req.route.path  and send that data forward to the viewer.
   // let android_src = `https://s3.eu-west-2.amazonaws.com/product.baetes.com/Limitato_Slipin_DarkGreen_${req.params.url}.glb`;
-  let tsrc = req.query.tsrc
+  let catalog = req.query.catalog
   let product = req.query.product
   let button_text = req.query.button_text
   let button_border = req.query.button_border
@@ -64,7 +67,7 @@ app.get('/', (req, res) => {
 
   res.render('index', {
     root: __dirname,
-    tsrc: tsrc,
+    catalog: catalog,
     button_text: button_text,
     sizes_used: sizes_used,
     colors_used: colors_used,
@@ -80,24 +83,41 @@ app.get('/', (req, res) => {
 })
 
 app.post('/', jsonParser, (req, res) => {
-  console.log(req.body)
-  let User = new user({
-    customer: req.body.tsrc,
-    product: req.body.product
+  var utc = require('dayjs/plugin/utc')
+  var timezone = require('dayjs/plugin/timezone') // dependent on utc plugin
+  dayjs.extend(utc)
+  dayjs.extend(timezone)
+  var date = Number(dayjs().tz('Europe/Stockholm').format('YYYYMDHHms'))
+  var year = Number(dayjs().tz('Europe/Stockholm').format('YYYY'))
+  var month = Number(dayjs().tz('Europe/Stockholm').format('M'))
+  var day = Number(dayjs().tz('Europe/Stockholm').format('D'))
+  var hour = Number(dayjs().tz('Europe/Stockholm').format('HH'))
+  var minute = Number(dayjs().tz('Europe/Stockholm').format('m'))
+  var second = Number(dayjs().tz('Europe/Stockholm').format('s'))
+
+  let Visit = new visit({
+    customer: req.body.catalog,
+    product: req.body.product,
+    date: date,
+    year: year,
+    month: month,
+    day: day,
+    hour: hour,
+    minute: minute,
+    second: second
   })
-  User.save((err, data) => {
-    if (err) {
-      // res.status(400).json({
-      //   errorMessage: err,
-      //   status: false
-      // })
-    } else {
-      // res.status(200).json({
-      //   status: true,
-      //   title: 'Registered Successfully.'
-      // })
-    }
-    res.end()
+  Visit.save((err, data) => {
+    // if (err) {
+    //   res.status(400).json({
+    //     errorMessage: err,
+    //     status: false
+    //   })
+    // } else {
+    //   res.status(200).json({
+    //     status: true,
+    //     title: 'Registered Successfully.'
+    //   })
+    // }
   })
 })
 

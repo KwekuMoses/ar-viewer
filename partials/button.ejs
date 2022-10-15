@@ -21,8 +21,8 @@ height="<%= height %>"
   <%colors_used.forEach(function(color){ %>
     <form action="/" method="POST">
        <input type="text" name="product" value="<%= product %>"/>
-       <input type="text" name="tsrc" value="<%= tsrc %>"/>
-       <input class="item-drop" type="submit" value="Submit"  onClick="setListItemAttributes(`<%= tsrc %>`, `<%= product %>`, `<%= color %>`)">
+       <input type="text" name="catalog" value="<%= catalog %>"/>
+       <input class="item-drop" type="submit" value="Submit"  onClick="setListItemAttributes(`<%= catalog %>`, `<%= product %>`, `<%= color %>`)">
       <%= color %>
     </input>
     </form>
