@@ -168,6 +168,19 @@ model-viewer {
     grid-template-columns: min-content;
 }
 
+#arForm {
+  input {
+    visibility: hidden;
+    height: 0;
+    width: 0;
+    white-space: nowrap;
+ line-height:0;
+ font-size: 0;
+ position:fixed;
+  }
+  
+}
+
 .btn-text {
   margin-bottom: 2px;
   display:grid;

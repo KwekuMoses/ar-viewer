@@ -11,4 +11,6 @@ const setViewerAttributes = (Src, product, Color) => {
 
 const setListItemAttributes = (Src, product, Color) => {
   setViewerAttributes(Src, product, Color)
+  let arForm = document.getElementById('arForm')
+  arForm.submit()
 }
