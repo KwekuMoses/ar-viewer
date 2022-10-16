@@ -93,7 +93,7 @@ app.post('/', jsonParser, (req, res) => {
   var day = Number(dayjs().tz('Europe/Stockholm').format('D'))
   var hour = Number(dayjs().tz('Europe/Stockholm').format('HH'))
   var minute = Number(dayjs().tz('Europe/Stockholm').format('m'))
-  var second = Number(dayjs().tz('Europe/Stockholm').format('s'))
+  var second = Number(dayjs().tz('Europe/Stockholm').format('ss'))
 
   let Visit = new visit({
     customer: req.body.catalog,
@@ -104,7 +104,9 @@ app.post('/', jsonParser, (req, res) => {
     day: day,
     hour: hour,
     minute: minute,
-    second: second
+    second: second,
+    readDate:
+      year + '-' + month + '-' + day + ' ' + hour + ':' + minute + ':' + second
   })
   Visit.save((err, data) => {
     // if (err) {
