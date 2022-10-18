@@ -1,15 +1,14 @@
-const setViewerAttributes = (Src, product, Color) => {
+const setViewerAttributes = (product, Color) => {
   // checka iphone vs android
   document.getElementById('the-viewer').setAttribute('src', product + '.glb')
   document
     .getElementById('the-viewer')
     .setAttribute('ios-src', product + '.usdz')
-  console.log(Src)
+  console.log(product)
 }
 
-const setListItemAttributes = (Src, product, Color) => {
-  console.log('lol')
-  setViewerAttributes(Src, product, Color)
+const setListItemAttributes = (product, Color) => {
+  setViewerAttributes(product, Color)
   let arForm = document.getElementById('arForm')
   arForm.submit()
 }
