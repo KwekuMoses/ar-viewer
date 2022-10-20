@@ -7,8 +7,28 @@ const setViewerAttributes = (product, Color) => {
   console.log(product)
 }
 
-const setListItemAttributes = (product, Color) => {
+const setListItemAttributes = async (product, Color) => {
   setViewerAttributes(product, Color)
-  let arForm = document.getElementById('arForm')
-  arForm.submit()
+  // let arForm = document.getElementById('arForm')
+
+  // arForm.submit()
+  const request = await fetch('https://ipinfo.io/json?token=48c7527aaa89bb')
+  const jsonResponse = await request.json()
+
+  console.log(jsonResponse.city, jsonResponse.country)
+  let city = jsonResponse.city
+  let country = jsonResponse.country
+  // let roduct = document.getElementById('arForm').product
+  // let catalog = document.getElementById('arForm').catalog
+  console.log(product)
+  const data = { city, country, product }
+
+  const options = {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify(data)
+  }
+  fetch('/', options)
 }
