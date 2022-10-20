@@ -10,7 +10,9 @@ var Schema = mongoose.Schema
   hour: Number,
   minute: Number,
   second: Number,
-  readDate: String
+  readDate: String,
+  country: String,
+  city: String
 })),
   (visit = mongoose.model('visit', visitSchema))
 
