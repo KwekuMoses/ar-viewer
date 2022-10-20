@@ -8,7 +8,6 @@ const setViewerAttributes = (product, Color) => {
 }
 
 const setListItemAttributes = async (product, Color) => {
-  setViewerAttributes(product, Color)
   // let arForm = document.getElementById('arForm')
 
   // arForm.submit()
@@ -31,4 +30,5 @@ const setListItemAttributes = async (product, Color) => {
     body: JSON.stringify(data)
   }
   fetch('/', options)
+  setViewerAttributes(product, Color)
 }

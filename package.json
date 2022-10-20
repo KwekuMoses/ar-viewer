@@ -21,6 +21,5 @@
   },
   "devDependencies": {
     "nodemon": "^2.0.20"
-  },
-  "proxy":"https://still-lake-53402.herokuapp.com/"
+  }
 }
