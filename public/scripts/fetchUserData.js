@@ -13,5 +13,4 @@ const fetchUserData = async (product) => {
     body: JSON.stringify(data)
   }
   fetch('/', options)
-  // setViewerAttributes(product)
 }
