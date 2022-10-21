@@ -18,9 +18,9 @@ height="<%= height %>"
 </div>
 <!-- Items -->
 <ul id="dropdown" class="drop-items">
-  <%colors.forEach(function(color){ %>
+     <%colors.forEach(function(color){ %>
        <!-- <input class="item-drop" type="submit" value="Submit"  onClick="setListItemAttributes(`<%= catalog %>`, `<%= product %>`, `<%= color %>`)"> -->
-       <li class="item-drop" onClick="setListItemAttributes(`<%= product %>`, `<%= color %>`)">
+       <li class="item-drop" onClick="setViewerAttributes(`<%= product %>`, `<%= color %>`)">
       <%= color %>
     </input>
   <%

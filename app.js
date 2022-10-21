@@ -28,7 +28,6 @@ app.get('/', (req, res) => {
   let catalog = req.query.catalog
 
   let product = req.query.product
-  console.log(product)
 
   let buttonText = req.query.buttonText
   let buttonBorder = req.query.buttonBorder
@@ -90,6 +89,8 @@ app.post('/', jsonParser, (req, res) => {
   let country = req.body.country
   let product = req.body.product
   let userData = req.body.userData
+  console.log(product)
+
   var utc = require('dayjs/plugin/utc')
   var timezone = require('dayjs/plugin/timezone') // dependent on utc plugin
   dayjs.extend(utc)

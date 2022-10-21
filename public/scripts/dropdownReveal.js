@@ -1,4 +1,3 @@
-// Reveal Dropdown
 let dropdown = document.getElementById('dropdown')
 
 const revealDropDown = () => {
