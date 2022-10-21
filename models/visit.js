@@ -12,7 +12,8 @@ var Schema = mongoose.Schema
   second: Number,
   readDate: String,
   country: String,
-  city: String
+  city: String,
+  userData: Object
 })),
   (visit = mongoose.model('visit', visitSchema))
 

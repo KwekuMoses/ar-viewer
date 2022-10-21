@@ -86,9 +86,10 @@ app.get('/', (req, res) => {
 })
 
 app.post('/', jsonParser, (req, res) => {
-  console.log(req.body)
   let city = req.body.city
   let country = req.body.country
+  let product = req.body.product
+  let userData = req.body.userData
   var utc = require('dayjs/plugin/utc')
   var timezone = require('dayjs/plugin/timezone') // dependent on utc plugin
   dayjs.extend(utc)
@@ -103,7 +104,8 @@ app.post('/', jsonParser, (req, res) => {
 
   let Visit = new visit({
     customer: req.body.catalog,
-    product: req.body.product,
+    userData: userData,
+    product: product,
     date: date,
     year: year,
     month: month,
