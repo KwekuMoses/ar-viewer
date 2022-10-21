@@ -29,6 +29,9 @@ app.get('/', (req, res) => {
 
   let product = req.query.product
 
+  let iphoneSrc = req.query.product + '.usdz'
+  let androidSrc = req.query.product + '.glb'
+
   let buttonText = req.query.buttonText
   let buttonBorder = req.query.buttonBorder
   let buttonBackgroundColor = req.query.buttonBackgroundColor
@@ -80,7 +83,9 @@ app.get('/', (req, res) => {
     width: width,
     height: height,
     fontSize: fontSize,
-    iconWidth: iconWidth
+    iconWidth: iconWidth,
+    iphoneSrc: iphoneSrc,
+    androidSrc: androidSrc
   })
 })
 
@@ -89,7 +94,6 @@ app.post('/', jsonParser, (req, res) => {
   let country = req.body.country
   let product = req.body.product
   let userData = req.body.userData
-  console.log(product)
 
   var utc = require('dayjs/plugin/utc')
   var timezone = require('dayjs/plugin/timezone') // dependent on utc plugin
