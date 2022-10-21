@@ -168,17 +168,21 @@ model-viewer {
     grid-template-columns: min-content;
 }
 
-#arForm {
-  input {
-    visibility: hidden;
-    height: 0;
-    width: 0;
-    white-space: nowrap;
- line-height:0;
- font-size: 0;
- position:fixed;
-  }
+// #arForm {
+//   input {
+//     visibility: hidden;
+//     height: 0;
+//     width: 0;
+//     white-space: nowrap;
+//  line-height:0;
+//  font-size: 0;
+//  position:fixed;
+//   }
   
+// }
+
+ul {
+padding: 0 !important;
 }
 
 .btn-text {

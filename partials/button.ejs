@@ -19,14 +19,10 @@ height="<%= height %>"
 <!-- Items -->
 <ul id="dropdown" class="drop-items">
   <%colors.forEach(function(color){ %>
-    <form id="arForm" action="/" method="POST">
-       <input type="text" name="product" value="<%= product %>"/>
-       <input type="text" name="catalog" value="<%= catalog %>"/>
        <!-- <input class="item-drop" type="submit" value="Submit"  onClick="setListItemAttributes(`<%= catalog %>`, `<%= product %>`, `<%= color %>`)"> -->
        <li class="item-drop" onClick="setListItemAttributes(`<%= product %>`, `<%= color %>`)">
       <%= color %>
     </input>
-    </form>
   <%
 })%>
 </ul>
