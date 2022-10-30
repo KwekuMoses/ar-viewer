@@ -4,7 +4,7 @@ const PORT = process.env.PORT || 3000
 const dayjs = require('dayjs')
 var mongoose = require('mongoose')
 mongoose.connect(
-  'mongodb+srv://kweku:mongodb@cluster.8uxr5.mongodb.net/mintwebb-visitors'
+  'mongodb+srv://kweku:mongodb@cluster.8uxr5.mongodb.net/test'
 )
 const path = require('path')
 var visit = require('./models/visit.js')
