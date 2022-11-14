@@ -7,13 +7,12 @@ const fetchUserData = async (product) => {
   const data = { city, country, product, userData }
   const options = {
     method: 'POST',
-    cache: "no-cache",
     headers: {
       'Content-Type': 'application/json'
     },
     body: JSON.stringify(data)
 
   }
-  fetch('/', options)
+  fetch('/test', options)
 
 }
