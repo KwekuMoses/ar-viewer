@@ -13,4 +13,8 @@ const fetchUserData = async (product) => {
     body: JSON.stringify(data)
   }
   fetch('/', options)
+    .then((response) => response.json())
+    .then((data) => {
+      console.log(data);
+    });
 }
