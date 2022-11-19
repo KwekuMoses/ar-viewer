@@ -13,6 +13,14 @@ const fetchUserData = async (product) => {
     body: JSON.stringify(data)
 
   }
-  fetch('/test', options)
+  // fetch('/', options)
+  try {
+    const fetchResponse = await fetch('/', options);
+    const data = await fetchResponse.json();
+    return data;
+  } catch (e) {
+    return e;
+  }
+
 
 }
