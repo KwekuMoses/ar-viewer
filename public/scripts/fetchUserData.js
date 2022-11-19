@@ -14,9 +14,11 @@ const fetchUserData = async (product) => {
 
   }
   // fetch('/', options)
-  try {
-    await fetch('/', options);
 
+  try {
+    const fetchResponse = await fetch(`/`, options);
+    const data = await fetchResponse.json();
+    return data;
   } catch (e) {
     return e;
   }
