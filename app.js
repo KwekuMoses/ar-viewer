@@ -89,7 +89,7 @@ app.get('/', (req, res) => {
   })
 })
 
-app.post('/', jsonParser, (req, res) => {
+app.post('/', (req, res) => {
   let city = req.body.city
   let country = req.body.country
   let product = req.body.product
