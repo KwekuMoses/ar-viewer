@@ -1,7 +1,6 @@
-let viewer = document.getElementById('the-viewer')
-let elements = document.getElementsByClassName('item-drop')
 
-const fetchUserData = async (product) => {
+
+const fetchUserData = async (product, color) => {
   const request = await fetch('https://ipinfo.io/json?token=48c7527aaa89bb')
   const jsonResponse = await request.json()
   let city = jsonResponse.city
@@ -9,22 +8,21 @@ const fetchUserData = async (product) => {
   let userData = jsonResponse
 
   const data = { city, country, product, userData }
-  let dataString = json.stringify(data)
+
   const options = {
     method: 'POST',
     mode: 'cors',
     headers: {
       'Content-Type': 'application/json'
     },
-    body: dataString
+    body: json.stringify(data)
   }
   // fetch('/', options)
 
   try {
     await fetch(`/`, options);
-    // const data = await fetchResponse.json();
-
-    // return data;
+    const data = await fetchResponse.json();
+    return data;
   } catch (e) {
     return e;
   }
@@ -32,9 +30,3 @@ const fetchUserData = async (product) => {
 
 }
 
-const activateAR = () => {
-  viewer.activateAR()
-}
-Array.from(elements).forEach(function (element) {
-  element.addEventListener('click', activateAR)
-})
