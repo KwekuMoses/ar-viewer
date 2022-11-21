@@ -26,8 +26,9 @@ const fetchUserData = async (e, product, color) => {
 
   }
 
-  fetch('/', options)
-  viewer.activateAR()
+  fetch('/', options).then((response) => {
+    viewer.activateAR()
+  })
 
   // try {
   //   const fetchResponse = await fetch(`/`, options);
