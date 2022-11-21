@@ -1,5 +1,15 @@
+let viewer = document.getElementById('the-viewer')
+let elements = document.getElementsByClassName('item-drop')
+
+Array.from(elements).forEach(function (element) {
+  // element.addEventListener('click', activateAR)
+})
+
+const activateAR = (button) => {
+  // viewer.activateAR()
+}
+
 const fetchUserData = async (e, product, color) => {
-  let button = e.target
   const request = await fetch('https://ipinfo.io/json?token=48c7527aaa89bb')
   const jsonResponse = await request.json()
   let city = jsonResponse.city
@@ -19,24 +29,14 @@ const fetchUserData = async (e, product, color) => {
 
   try {
     const fetchResponse = await fetch(`/`, options);
-    const data = await fetchResponse.json().then(() =>
-      activateAR(button)
-    );
+    const data = await fetchResponse.json()
+    viewer.activateAR()
     return data;
   } catch (e) {
     return e;
   }
 
 }
-let viewer = document.getElementById('the-viewer')
-let elements = document.getElementsByClassName('item-drop')
-
-Array.from(elements).forEach(function (element) {
-  element.addEventListener('click', activateAR)
-})
 
 
-const activateAR = (button) => {
-  button.activateAR()
-}
 
