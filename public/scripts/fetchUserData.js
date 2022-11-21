@@ -5,6 +5,7 @@ const fetchUserData = async (product) => {
   let country = jsonResponse.country
   let userData = jsonResponse
   let viewer = document.getElementById('the-viewer')
+  let elements = document.getElementsByClassName('item-drop')
   const data = { city, country, product, userData }
   let dataString = json.stringify(data)
   const options = {
@@ -20,12 +21,14 @@ const fetchUserData = async (product) => {
   try {
     const fetchResponse = await fetch(`/`, options);
     const data = await fetchResponse.json();
-
+    Array.from(elements).forEach(function (element) {
+      element.addEventListener('click', activateAR)
+    })
+    viewer.activateAR()
     return data;
   } catch (e) {
     return e;
   }
 
-  viewer.activateAR()
 
 }
