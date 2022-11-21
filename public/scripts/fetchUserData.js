@@ -18,14 +18,14 @@ const fetchUserData = async (product) => {
   // fetch('/', options)
 
   try {
-    const fetchResponse = await fetch(`https://still-lake-53402.herokuapp.com/`, options);
+    const fetchResponse = await fetch(`/`, options);
     const data = await fetchResponse.json();
-    viewer.activateAR()
 
     return data;
   } catch (e) {
     return e;
   }
 
+  viewer.activateAR()
 
 }
