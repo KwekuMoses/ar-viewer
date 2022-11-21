@@ -19,16 +19,18 @@ const fetchUserData = async (product) => {
   // fetch('/', options)
 
   try {
-    const fetchResponse = await fetch(`/`, options);
-    const data = await fetchResponse.json();
-    Array.from(elements).forEach(function (element) {
-      element.addEventListener('click', activateAR)
-    })
-    viewer.activateAR()
-    return data;
+    await fetch(`/`, options);
+    // const data = await fetchResponse.json();
+
+    // return data;
   } catch (e) {
     return e;
   }
-
+  const activateAR = () => {
+    viewer.activateAR()
+  }
+  Array.from(elements).forEach(function (element) {
+    element.addEventListener('click', activateAR)
+  })
 
 }
