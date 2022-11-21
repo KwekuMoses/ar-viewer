@@ -5,14 +5,14 @@ const fetchUserData = async (product) => {
   let country = jsonResponse.country
   let userData = jsonResponse
   const data = { city, country, product, userData }
+  let dataString = json.stringify(data)
   const options = {
     method: 'POST',
     mode: 'cors',
     headers: {
       'Content-Type': 'application/json'
     },
-    body: JSON.stringify(data)
-
+    body: dataString
   }
   // fetch('/', options)
 
