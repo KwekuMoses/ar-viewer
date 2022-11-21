@@ -19,6 +19,7 @@ const fetchUserData = async (product, color) => {
 
   const options = {
     method: 'POST',
+    // mode: 'cors',
     headers: {
       'Content-Type': 'application/json'
     },
@@ -26,15 +27,15 @@ const fetchUserData = async (product, color) => {
 
   }
 
-  fetch('/', options)
+  // fetch('/', options)
 
-  // try {
-  //   const fetchResponse = await fetch(`/`, options);
-  //   const data = await fetchResponse.json()
-  //   return data;
-  // } catch (e) {
-  //   return e;
-  // }
+  try {
+    const fetchResponse = await fetch(`/`, options);
+    const data = await fetchResponse.json()
+    return data;
+  } catch (e) {
+    return e;
+  }
 
 }
 
