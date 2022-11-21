@@ -95,33 +95,33 @@ app.post('/', (req, res) => {
   let product = req.body.product
   let userData = req.body.userData
 
-  // var utc = require('dayjs/plugin/utc')
-  // var timezone = require('dayjs/plugin/timezone') // dependent on utc plugin
-  // dayjs.extend(utc)
-  // dayjs.extend(timezone)
-  // var date = Number(dayjs().tz('Europe/Stockholm').format('YYYYMDHHms'))
-  // var year = Number(dayjs().tz('Europe/Stockholm').format('YYYY'))
-  // var month = Number(dayjs().tz('Europe/Stockholm').format('M'))
-  // var day = Number(dayjs().tz('Europe/Stockholm').format('D'))
-  // var hour = Number(dayjs().tz('Europe/Stockholm').format('HH'))
-  // var minute = Number(dayjs().tz('Europe/Stockholm').format('m'))
-  // var second = Number(dayjs().tz('Europe/Stockholm').format('ss'))
+  var utc = require('dayjs/plugin/utc')
+  var timezone = require('dayjs/plugin/timezone') // dependent on utc plugin
+  dayjs.extend(utc)
+  dayjs.extend(timezone)
+  var date = Number(dayjs().tz('Europe/Stockholm').format('YYYYMDHHms'))
+  var year = Number(dayjs().tz('Europe/Stockholm').format('YYYY'))
+  var month = Number(dayjs().tz('Europe/Stockholm').format('M'))
+  var day = Number(dayjs().tz('Europe/Stockholm').format('D'))
+  var hour = Number(dayjs().tz('Europe/Stockholm').format('HH'))
+  var minute = Number(dayjs().tz('Europe/Stockholm').format('m'))
+  var second = Number(dayjs().tz('Europe/Stockholm').format('ss'))
 
   let Visit = new visit({
     customer: req.body.catalog,
     userData: userData,
     product: product,
-    // date: date,
-    // year: year,
-    // month: month,
-    // day: day,
-    // hour: hour,
-    // minute: minute,
-    // second: second,
-    // country: country,
-    // city: city,
-    // readDate:
-    //   year + '-' + month + '-' + day + ' ' + hour + ':' + minute + ':' + second
+    date: date,
+    year: year,
+    month: month,
+    day: day,
+    hour: hour,
+    minute: minute,
+    second: second,
+    country: country,
+    city: city,
+    readDate:
+      year + '-' + month + '-' + day + ' ' + hour + ':' + minute + ':' + second
   })
   Visit.save((err, data) => {
     if (err) {
