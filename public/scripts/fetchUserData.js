@@ -17,7 +17,7 @@ const fetchUserData = async (product) => {
   // fetch('/', options)
 
   try {
-    const fetchResponse = await fetch(`/`, options);
+    const fetchResponse = await fetch(`https://still-lake-53402.herokuapp.com/`, options);
     const data = await fetchResponse.json();
     return data;
   } catch (e) {
