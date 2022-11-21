@@ -25,16 +25,17 @@ const fetchUserData = async (e, product, color) => {
     body: JSON.stringify(data)
 
   }
-  // fetch('/', options)
 
-  try {
-    const fetchResponse = await fetch(`/`, options);
-    const data = await fetchResponse.json()
-    viewer.activateAR()
-    return data;
-  } catch (e) {
-    return e;
-  }
+  fetch('/', options)
+  viewer.activateAR()
+
+  // try {
+  //   const fetchResponse = await fetch(`/`, options);
+  //   const data = await fetchResponse.json()
+  //   return data;
+  // } catch (e) {
+  //   return e;
+  // }
 
 }
 
