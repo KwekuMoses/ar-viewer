@@ -1,4 +1,4 @@
-const fetchUserData = async (product) => {
+const fetchUserData = async (product, color) => {
   const request = await fetch('https://ipinfo.io/json?token=48c7527aaa89bb')
   const jsonResponse = await request.json()
   let city = jsonResponse.city
