@@ -7,7 +7,6 @@ const fetchUserData = async (product, color) => {
   const data = { city, country, product, userData }
   const options = {
     method: 'POST',
-    mode: 'cors',
     headers: {
       'Content-Type': 'application/json'
     },
