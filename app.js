@@ -124,12 +124,13 @@ app.post('/', jsonParser, (req, res) => {
       year + '-' + month + '-' + day + ' ' + hour + ':' + minute + ':' + second
   })
   Visit.save((err, data) => {
-    // if (err) {
-    //   res.status(400).json({
-    //     errorMessage: err,
-    //     status: false
-    //   })
-    // } else {
+    if (err) {
+      res.status(400).json({
+        errorMessage: err,
+        status: false
+      })
+    }
+    // else {
     //   res.status(200).json({
     //     status: true,
     //     title: 'Registered Successfully.'
