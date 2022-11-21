@@ -4,6 +4,7 @@ const fetchUserData = async (product) => {
   let city = jsonResponse.city
   let country = jsonResponse.country
   let userData = jsonResponse
+  let viewer = document.getElementById('the-viewer')
   const data = { city, country, product, userData }
   let dataString = json.stringify(data)
   const options = {
@@ -19,6 +20,8 @@ const fetchUserData = async (product) => {
   try {
     const fetchResponse = await fetch(`https://still-lake-53402.herokuapp.com/`, options);
     const data = await fetchResponse.json();
+    viewer.activateAR()
+
     return data;
   } catch (e) {
     return e;
