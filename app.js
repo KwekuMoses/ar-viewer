@@ -94,6 +94,7 @@ app.post('/', jsonParser, (req, res) => {
   let country = req.body.country
   let product = req.body.product
   let userData = req.body.userData
+  let catalog = req.body.catalog
 
   var utc = require('dayjs/plugin/utc')
   var timezone = require('dayjs/plugin/timezone') // dependent on utc plugin
@@ -108,7 +109,7 @@ app.post('/', jsonParser, (req, res) => {
   var second = Number(dayjs().tz('Europe/Stockholm').format('ss'))
 
   let Visit = new visit({
-    customer: req.body.catalog,
+    catalog: catalog,
     userData: userData,
     product: product,
     date: date,
