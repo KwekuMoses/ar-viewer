@@ -2,11 +2,15 @@ let viewer = document.getElementById('the-viewer')
 
 const fetchUserData = async (product, catalog) => {
   console.log(catalog)
-  const request = await fetch('https://ipinfo.io/json?token=48c7527aaa89bb')
-  const jsonResponse = await request.json()
+  // const request = await fetch('https://ipinfo.io/json?token=48c7527aaa89bb')
+  // const jsonResponse = await request.json()
 
-  let userData = jsonResponse
-  const data = { product, userData, catalog }
+  // let userData = jsonResponse
+  const data = {
+    product,
+    // userData, 
+    catalog
+  }
   const options = {
     method: 'POST',
     mode: 'cors',
