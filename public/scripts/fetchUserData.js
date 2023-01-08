@@ -16,7 +16,6 @@ const fetchUserData = async (product, catalog) => {
     body: JSON.stringify(data)
 
   }
-  viewer.activateAR()
 
   try {
     // const fetchResponse = 
@@ -26,6 +25,8 @@ const fetchUserData = async (product, catalog) => {
   } catch (e) {
     return e;
   }
+
+  viewer.activateAR()
 
 
 }
