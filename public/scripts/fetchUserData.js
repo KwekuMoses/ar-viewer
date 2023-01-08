@@ -20,7 +20,7 @@ const fetchUserData = async (product, catalog) => {
     body: JSON.stringify(data)
 
   }
-  viewer.activateAR()
+  // viewer.activateAR()
 
   try {
     const fetchResponse = await fetch(`/`, options);
