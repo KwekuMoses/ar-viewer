@@ -119,10 +119,10 @@ app.post('/', jsonParser, (req, res) => {
     hour: hour,
     minute: minute,
     second: second,
-    country: country,
-    city: city,
-    readDate:
-      year + '-' + month + '-' + day + ' ' + hour + ':' + minute + ':' + second
+    // country: country,
+    // city: city,
+    // readDate:
+    //   year + '-' + month + '-' + day + ' ' + hour + ':' + minute + ':' + second
   })
   Visit.save((err, data) => {
     // if (err) {
