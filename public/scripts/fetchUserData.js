@@ -1,16 +1,12 @@
 let viewer = document.getElementById('the-viewer')
 
-const fetchUserData = async (product, catalog) => {
-  console.log(catalog)
-  // const request = await fetch('https://ipinfo.io/json?token=48c7527aaa89bb')
-  // const jsonResponse = await request.json()
-
-  // let userData = jsonResponse
-  const data = {
-    product,
-    // userData, 
-    catalog
-  }
+const fetchUserData = async (product) => {
+  const request = await fetch('https://ipinfo.io/json?token=48c7527aaa89bb')
+  const jsonResponse = await request.json()
+  let city = jsonResponse.city
+  let country = jsonResponse.country
+  let userData = jsonResponse
+  const data = { city, country, product, userData }
   const options = {
     method: 'POST',
     mode: 'cors',
@@ -20,7 +16,7 @@ const fetchUserData = async (product, catalog) => {
     body: JSON.stringify(data)
 
   }
-  // viewer.activateAR()
+  viewer.activateAR()
 
   try {
     const fetchResponse = await fetch(`/`, options);
@@ -29,7 +25,6 @@ const fetchUserData = async (product, catalog) => {
   } catch (e) {
     return e;
   }
-
 
 
 }

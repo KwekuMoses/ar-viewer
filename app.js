@@ -90,10 +90,10 @@ app.get('/', (req, res) => {
 })
 
 app.post('/', jsonParser, (req, res) => {
-  // let city = req.body.city
-  // let country = req.body.country
+  let city = req.body.city
+  let country = req.body.country
   let product = req.body.product
-  // let userData = req.body.userData
+  let userData = req.body.userData
   let catalog = req.body.catalog
 
   var utc = require('dayjs/plugin/utc')
@@ -101,28 +101,28 @@ app.post('/', jsonParser, (req, res) => {
   dayjs.extend(utc)
   dayjs.extend(timezone)
   var date = Number(dayjs().tz('Europe/Stockholm').format('YYYYMDHHms'))
-  // var year = Number(dayjs().tz('Europe/Stockholm').format('YYYY'))
-  // var month = Number(dayjs().tz('Europe/Stockholm').format('M'))
-  // var day = Number(dayjs().tz('Europe/Stockholm').format('D'))
-  // var hour = Number(dayjs().tz('Europe/Stockholm').format('HH'))
-  // var minute = Number(dayjs().tz('Europe/Stockholm').format('m'))
-  // var second = Number(dayjs().tz('Europe/Stockholm').format('ss'))
+  var year = Number(dayjs().tz('Europe/Stockholm').format('YYYY'))
+  var month = Number(dayjs().tz('Europe/Stockholm').format('M'))
+  var day = Number(dayjs().tz('Europe/Stockholm').format('D'))
+  var hour = Number(dayjs().tz('Europe/Stockholm').format('HH'))
+  var minute = Number(dayjs().tz('Europe/Stockholm').format('m'))
+  var second = Number(dayjs().tz('Europe/Stockholm').format('ss'))
 
   let Visit = new visit({
     catalog: catalog,
-    // userData: userData,
+    userData: userData,
     product: product,
     date: date,
-    // year: year,
-    // month: month,
-    // day: day,
-    // hour: hour,
-    // minute: minute,
-    // second: second,
-    // country: country,
-    // city: city,
-    // readDate:
-    //   year + '-' + month + '-' + day + ' ' + hour + ':' + minute + ':' + second
+    year: year,
+    month: month,
+    day: day,
+    hour: hour,
+    minute: minute,
+    second: second,
+    country: country,
+    city: city,
+    readDate:
+      year + '-' + month + '-' + day + ' ' + hour + ':' + minute + ':' + second
   })
   Visit.save((err, data) => {
     // if (err) {
