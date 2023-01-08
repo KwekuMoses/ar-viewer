@@ -93,7 +93,7 @@ app.post('/', jsonParser, (req, res) => {
   // let city = req.body.city
   // let country = req.body.country
   let product = req.body.product
-  let userData = req.body.userData
+  // let userData = req.body.userData
   let catalog = req.body.catalog
 
   var utc = require('dayjs/plugin/utc')
@@ -110,7 +110,7 @@ app.post('/', jsonParser, (req, res) => {
 
   let Visit = new visit({
     catalog: catalog,
-    userData: userData,
+    // userData: userData,
     product: product,
     date: date,
     // year: year,
