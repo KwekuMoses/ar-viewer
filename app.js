@@ -137,7 +137,7 @@ app.post('/', jsonParser, (req, res) => {
     //   })
     // }
   })
-  res.send()
+  res.end()
 })
 
 app.listen(PORT, () => {
