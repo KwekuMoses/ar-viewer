@@ -102,7 +102,7 @@ app.post('/', jsonParser, (req, res) => {
   dayjs.extend(timezone)
   var date = Number(dayjs().tz('Europe/Stockholm').format('YYYYMDDHHms'))
   var year = Number(dayjs().tz('Europe/Stockholm').format('YYYY'))
-  var month = Number(dayjs().tz('Europe/Stockholm').format('M'))
+  var month = Number(dayjs().tz('Europe/Stockholm').format('MM'))
   var day = Number(dayjs().tz('Europe/Stockholm').format('DD'))
   var hour = Number(dayjs().tz('Europe/Stockholm').format('HH'))
   var minute = Number(dayjs().tz('Europe/Stockholm').format('m'))
