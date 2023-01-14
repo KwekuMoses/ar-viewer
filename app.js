@@ -100,7 +100,7 @@ app.post('/', jsonParser, (req, res) => {
   var timezone = require('dayjs/plugin/timezone') // dependent on utc plugin
   dayjs.extend(utc)
   dayjs.extend(timezone)
-  var date = Number(dayjs().tz('Europe/Stockholm').format('YYYYMDDHHms'))
+  var date = Number(dayjs().tz('Europe/Stockholm').format('YYYYMMDDHHms'))
   var year = Number(dayjs().tz('Europe/Stockholm').format('YYYY'))
   var month = Number(dayjs().tz('Europe/Stockholm').format('MM'))
   var day = Number(dayjs().tz('Europe/Stockholm').format('DD'))
