@@ -17,16 +17,7 @@ const fetchUserData = async (product, catalog) => {
 
   }
 
-  // try {
-  // const fetchResponse = await fetch(`/`, options);
   await fetch(`/`, options);
-  //   const data = await fetchResponse.json()
-  //   return data;
-  // } catch (e) {
-  //   return e;
-  // }
 
   viewer.activateAR()
-
-
 }
