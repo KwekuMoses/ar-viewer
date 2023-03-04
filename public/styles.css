@@ -203,6 +203,7 @@ model-viewer {
   display: -ms-grid;
   display: grid;
   place-content: center;
+  word-spacing: 5px;
 }
 
 .item-drop {
