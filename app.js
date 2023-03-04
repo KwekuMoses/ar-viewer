@@ -70,6 +70,8 @@ app.get('/', (req, res) => {
     }
   })
 
+  console.log(iphoneSrc)
+
   res.render('index', {
     root: __dirname,
     catalog: catalog,
