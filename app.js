@@ -29,8 +29,8 @@ app.get('/', (req, res) => {
 
   let product = req.query.product
 
-  let iphoneSrc = 'https://still-lake-53402.herokuapp.com/ ' + catalog + product + '.usdz'
-  let androidSrc = 'https://still-lake-53402.herokuapp.com/' + catalog + product + '.glb'
+  let iphoneSrc = 'https://still-lake-53402.herokuapp.com/ ' + catalog + '/' + product + '.usdz'
+  let androidSrc = 'https://still-lake-53402.herokuapp.com/' + catalog + '/' + product + '.glb'
 
   let buttonText = req.query.buttonText
   let buttonBorder = req.query.buttonBorder
