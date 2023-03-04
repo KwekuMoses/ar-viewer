@@ -9,6 +9,7 @@ html {
 body {
   margin:0;
   padding: 0;
+  font-family: 'Cascadia code';
 }
 
 img {
@@ -30,7 +31,8 @@ model-viewer {
   display: inline-block;
   position: relative;
   text-align: center;
-  font-family: 'Oswald', sans-serif;
+  font-family: 'Cascadia Code', sans-serif;
+  font-weight: 300;
 }
 
 .drop input[type='checkbox'] {
