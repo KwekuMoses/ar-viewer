@@ -2,26 +2,32 @@
 @import url('https://fonts.googleapis.com/css2?family=Oswald&display=swap');
 //Variables
 $color-primary-theme: #ffffff;
-$width-sm-min: (768px);
-html{
-    display:grid;
-    justify-items:center;
+$width-sm-min: (
+  768px
+);
+
+html {
+  display: grid;
+  justify-items: center;
 }
 
 
 img {
   height: auto;
 }
+
 model-viewer {
   visibility: hidden;
   width: 0vw;
   height: 0vh;
 }
+
 #container {
   // visibility: hidden;
   height: 0vh;
   width: 0vw;
 }
+
 //----------------------------
 //-------  Dropdown ----------
 //----------------------------
@@ -30,21 +36,26 @@ model-viewer {
   position: relative;
   text-align: center;
   font-family: 'Oswald', sans-serif;
+
   input[type='checkbox'] {
     display: none;
+
     &:checked {
-      ~ .drop-items {
+      ~.drop-items {
         opacity: 1;
         max-height: 400px;
       }
-      ~ .control {
+
+      ~.control {
         z-index: 99;
         box-shadow: 0 0 0 2px lighten($color-primary-theme, 20);
+
         &:after {
           transform: rotate(180deg);
         }
       }
-      ~ .overlay-close {
+
+      ~.overlay-close {
         transform: none;
         pointer-events: initial;
       }
@@ -62,22 +73,24 @@ model-viewer {
     // border-radius: 4px;
     transition: all 0.3s ease;
     text-transform: uppercase;
+
     @media (hover: hover) {
       &:hover {
         opacity: 0.75;
       }
     }
+
     &:after {
-      content: '';
-      display: inline-block;
-      height: 0.5em;
-      width: 0.5em;
-      background-image: url("data:image/svg+xml,%3Csvg fill='%23000' xmlns='http://www.w3.org/2000/svg' width='16' height='13.838' viewBox='0 0 16 13.838'%3E%3Cpath d='M15.78,12.753a1.529,1.529,0,0,1-1.311,2.314H1.53A1.529,1.529,0,0,1,.219,12.753L6.69,1.969a1.528,1.528,0,0,1,2.619,0L15.78,12.753Z' transform='translate(16 15.067) rotate(180)'/%3E%3C/svg%3E%0A");
-      background-repeat: no-repeat;
-      background-position: center;
-      background-size: contain;
-      transition: transform 0.3s ease;
-      margin-bottom: 3px;
+      // content: '';
+      // display: inline-block;
+      // height: 0.5em;
+      // width: 0.5em;
+      // // background-image: url("data:image/svg+xml,%3Csvg fill='%23000' xmlns='http://www.w3.org/2000/svg' width='16' height='13.838' viewBox='0 0 16 13.838'%3E%3Cpath d='M15.78,12.753a1.529,1.529,0,0,1-1.311,2.314H1.53A1.529,1.529,0,0,1,.219,12.753L6.69,1.969a1.528,1.528,0,0,1,2.619,0L15.78,12.753Z' transform='translate(16 15.067) rotate(180)'/%3E%3C/svg%3E%0A");
+      // background-repeat: no-repeat;
+      // background-position: center;
+      // background-size: contain;
+      // transition: transform 0.3s ease;
+      // margin-bottom: 3px;
     }
   }
 
@@ -102,18 +115,21 @@ model-viewer {
       display: grid;
       place-items: center;
       border-bottom: 1px solid rgba(128, 128, 128, 0.281);
+
       a {
         display: block;
         color: #555;
         text-decoration: none;
         padding: 0.8rem;
         transition: all 0.3s ease;
+
         @media (hover: hover) {
           &:hover {
             background: #eee;
           }
         }
       }
+
       &:hover {
         cursor: pointer;
       }
@@ -131,6 +147,7 @@ model-viewer {
     pointer-events: none;
   }
 }
+
 .color-picker {
   display: grid;
   place-items: start;
@@ -157,15 +174,17 @@ model-viewer {
     margin-left: 0 !important;
   }
 }
+
 #icon-text-wrapper {
-    display:grid;
-    grid-template-columns: auto 1fr;
+  display: grid;
+  grid-template-columns: auto 1fr;
 }
+
 #thebutton {
-    display: grid;
-    place-items: center;
-    grid-auto-flow: column;
-    grid-template-columns: min-content;
+  display: grid;
+  place-items: center;
+  grid-auto-flow: column;
+  grid-template-columns: min-content;
 }
 
 // #arForm {
@@ -178,16 +197,16 @@ model-viewer {
 //  font-size: 0;
 //  position:fixed;
 //   }
-  
+
 // }
 
 ul {
-padding: 0 !important;
+  padding: 0 !important;
 }
 
 .btn-text {
   margin-bottom: 2px;
-  display:grid;
+  display: grid;
   place-content: center;
 }
 
@@ -201,6 +220,6 @@ iframe {
 
 
 .active {
-max-height: unset !important;
-opacity: 1 !important;
+  max-height: unset !important;
+  opacity: 1 !important;
 }

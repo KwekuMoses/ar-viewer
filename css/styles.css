@@ -1,7 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;700&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Oswald&display=swap");
 html {
-  display: -ms-grid;
   display: grid;
   justify-items: center;
 }
@@ -25,35 +24,26 @@ model-viewer {
   display: inline-block;
   position: relative;
   text-align: center;
-  font-family: 'Oswald', sans-serif;
+  font-family: "Oswald", sans-serif;
 }
-
-.drop input[type='checkbox'] {
+.drop input[type=checkbox] {
   display: none;
 }
-
-.drop input[type='checkbox']:checked ~ .drop-items {
+.drop input[type=checkbox]:checked ~ .drop-items {
   opacity: 1;
   max-height: 400px;
 }
-
-.drop input[type='checkbox']:checked ~ .control {
+.drop input[type=checkbox]:checked ~ .control {
   z-index: 99;
-  -webkit-box-shadow: 0 0 0 2px white;
-          box-shadow: 0 0 0 2px white;
+  box-shadow: 0 0 0 2px white;
 }
-
-.drop input[type='checkbox']:checked ~ .control:after {
-  -webkit-transform: rotate(180deg);
-          transform: rotate(180deg);
+.drop input[type=checkbox]:checked ~ .control:after {
+  transform: rotate(180deg);
 }
-
-.drop input[type='checkbox']:checked ~ .overlay-close {
-  -webkit-transform: none;
-          transform: none;
+.drop input[type=checkbox]:checked ~ .overlay-close {
+  transform: none;
   pointer-events: initial;
 }
-
 .drop .control {
   position: relative;
   color: #000;
@@ -62,64 +52,51 @@ model-viewer {
   padding: 0.2em 0.3em;
   background: #ffffff;
   border: 1px solid black;
-  -webkit-transition: all 0.3s ease;
   transition: all 0.3s ease;
   text-transform: uppercase;
 }
-
 @media (hover: hover) {
   .drop .control:hover {
     opacity: 0.75;
   }
 }
-
-
 .drop .drop-items {
   position: absolute;
   top: calc(100% + 0.4rem);
   width: 100%;
   padding: 0;
   margin: 0;
-  -webkit-transition: all 0.3s ease;
   transition: all 0.3s ease;
   background: #fff;
-  -webkit-box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
-          box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
   border-radius: 4px;
   overflow: hidden;
   max-height: 0;
   opacity: 0;
   z-index: 99;
 }
-
 .drop .drop-items .item-drop {
   list-style: none;
   height: 40px;
-  display: -ms-grid;
   display: grid;
   place-items: center;
   border-bottom: 1px solid rgba(128, 128, 128, 0.281);
 }
-
 .drop .drop-items .item-drop a {
   display: block;
   color: #555;
   text-decoration: none;
   padding: 0.8rem;
-  -webkit-transition: all 0.3s ease;
   transition: all 0.3s ease;
 }
-
 @media (hover: hover) {
   .drop .drop-items .item-drop a:hover {
     background: #eee;
   }
 }
-
 .drop .drop-items .item-drop:hover {
   cursor: pointer;
 }
-
 .drop .overlay-close {
   position: fixed;
   top: 0;
@@ -127,36 +104,27 @@ model-viewer {
   bottom: 0;
   right: 0;
   z-index: 9;
-  -webkit-transform: translate(100%, 0);
-          transform: translate(100%, 0);
+  transform: translate(100%, 0);
   pointer-events: none;
 }
 
-/* .color-picker {
-  display: -ms-grid;
+.color-picker {
   display: grid;
   place-items: start;
-  -ms-grid-rows: max-content;
-      grid-template-rows: -webkit-max-content;
-      grid-template-rows: max-content;
-  -ms-grid-columns: (1fr)[4];
-      grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: max-content;
+  grid-template-columns: repeat(4, 1fr);
   max-width: 115px;
   margin-bottom: 7px;
-  font-family: 'Oswald', sans-serif;
-} */
-
+  font-family: "Oswald", sans-serif;
+}
 .color-picker .color-name {
   margin: 0;
   font-size: 12px;
 }
-
 .color-picker .one-color {
-  display: -ms-grid;
   display: grid;
   place-items: start;
 }
-
 .color-picker .radio {
   position: relative;
   display: block;
@@ -165,35 +133,23 @@ model-viewer {
 }
 
 #icon-text-wrapper {
-  display: -ms-grid;
   display: grid;
-  -ms-grid-columns: auto 1fr;
-      grid-template-columns: auto 1fr;
+  grid-template-columns: auto 1fr;
 }
 
 #thebutton {
-  display: -ms-grid;
   display: grid;
   place-items: center;
   grid-auto-flow: column;
-  -ms-grid-columns: min-content;
-      grid-template-columns: -webkit-min-content;
-      grid-template-columns: min-content;
+  grid-template-columns: min-content;
 }
 
-#arForm input {
-  visibility: hidden;
-  height: 0;
-  width: 0;
-  white-space: nowrap;
-  line-height: 0;
-  font-size: 0;
-  position: fixed;
+ul {
+  padding: 0 !important;
 }
 
 .btn-text {
   margin-bottom: 2px;
-  display: -ms-grid;
   display: grid;
   place-content: center;
 }
@@ -210,4 +166,3 @@ iframe {
   max-height: unset !important;
   opacity: 1 !important;
 }
-/*# sourceMappingURL=styles.css.map */

@@ -12,19 +12,7 @@ height="<%= height %>"
 <img id="theIcon" src="images/augmented-reality.png" alt="camera-logo" iconWidth="<%= iconWidth %>"/>
 
 <div id="icon-text-wrapper">
-  <span id="btntext" class="btn-text" fontSize="<%= fontSize %>"> <%= buttonText || "View In Ar"%></span>
+  <span id="btntext" class="btn-text" fontSize="<%= fontSize %>" onClick="fetchUserData(`<%= product %>`, `<%= catalog %>`)"> <%= buttonText || "View In Ar"%></span>
   </span
 >
 </div>
-<!-- Items -->
-<ul id="dropdown" class="drop-items">
-     <%colors.forEach(function(color){ %>
-       <!-- <input class="item-drop" type="submit" value="Submit"  onClick="setListItemAttributes(`<%= catalog %>`, `<%= product %>`, `<%= color %>`)"> -->
-       <li class="item-drop" onClick="fetchUserData(`<%= product %>`, `<%= catalog %>`)">
-      <%= color %>
-    </input>
-  <%
-})%>
-</ul>
-<!-- Alternative to close dropdown with click out -->
-<label for="target-drop-example" class="overlay-close"></label>
