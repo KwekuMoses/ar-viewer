@@ -29,8 +29,8 @@ app.get('/', (req, res) => {
 
   let product = req.query.product
 
-  let iphoneSrc = req.query.product + '.usdz'
-  let androidSrc = req.query.product + '.glb'
+  let iphoneSrc = 'https://mintwebb-test.s3.eu-west-1.amazonaws.com/' + catalog + '/' + product + '.usdz'
+  let androidSrc = 'https://mintwebb-test.s3.eu-west-1.amazonaws.com/' + catalog + '/' + product + '.glb'
 
   let buttonText = req.query.buttonText
   let buttonBorder = req.query.buttonBorder
@@ -69,6 +69,8 @@ app.get('/', (req, res) => {
       colors.push(color)
     }
   })
+
+  console.log(iphoneSrc)
 
   res.render('index', {
     root: __dirname,
