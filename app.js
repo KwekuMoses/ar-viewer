@@ -6,6 +6,7 @@ const PORT = process.env.PORT || 3000;
 const dayjs = require("dayjs");
 var mongoose = require("mongoose");
 mongoose.connect(process.env.MONGO_URI);
+
 const path = require("path");
 var visit = require("./models/visit.js");
 var bodyParser = require("body-parser");
